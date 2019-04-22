@@ -1,0 +1,37 @@
+
+#topbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	
+	#logo {
+		width: 64px;
+		height: 64px;
+		background-color: #1fa2ff;
+		border-radius: 50%;
+	}
+
+	nav {
+		display: flex;
+		flex: 0 0 auto;
+
+		.menu-item-slot {
+			padding: 0 16px;
+
+			.menu-item {
+				font-weight: bold;
+				color: #1fa2ff;
+				transition: color 0.3s ease;
+			
+				&.active {
+					color: #29d;
+				}
+			}
+		}
+
+	}
+}
+
+a {
+	text-decoration: none;
+}

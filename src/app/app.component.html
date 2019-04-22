@@ -1,6 +1,37 @@
-<!-- Topbar -->
-<a routerLink="/hakkimizda">Hakkimizda</a>
-<a routerLink="/iletisim">Iletisim</a>
-<a routerLink="/">Home Sweet Home!</a>
+
+<section id="topbar">
+	<div id="logo"></div>
+
+	<nav>
+
+		<div
+			*ngFor="let m of menuItems"
+			class="menu-item-slot">
+
+			<ng-container *ngIf="m.sub; else flat">
+				<div class="menu-item">
+					{{m.name}}
+					<div class="sub-menu">
+						<a
+							*ngFor="let s of m.sub"
+							[routerLink]="s.routerLink"
+							class="sub-item">
+								{{s.name}}
+						</a>
+					</div>
+				</div>
+			</ng-container>
+
+			<ng-template #flat>
+				<a
+					[routerLink]="m.routerLink"
+					class="menu-item menu-item--flat">
+						{{m.name}}
+				</a>
+			</ng-template>
+		</div>
+		
+	</nav>
+</section>
 
 <router-outlet></router-outlet>
