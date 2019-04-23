@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Route, RouterModule } from '@angular/router';
 
+import { AcarUiModule } from 'acar-ui';
 import { HomeComponent } from './home.component';
 
 const routes: Route[] = [
@@ -12,7 +13,8 @@ const routes: Route[] = [
   declarations: [HomeComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    AcarUiModule
   ]
 })
 export class HomeModule { }

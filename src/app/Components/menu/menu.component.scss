@@ -15,12 +15,19 @@
 
 		.menu-item {
 			font-family: ubuntu;
-			font-weight: bold;
+			// font-weight: bold;
 			font-size: 14px;
 			color: #233f7dad;
-			transition: color 0.3s ease;
+			transition:
+				color 0.3s ease,
+				font-weight 0.3s ease;
 		
 			&.active {
+				color: #233f7dff;
+				font-weight: bold;
+			}
+
+			&:hover {
 				color: #233f7dff;
 			}
 		}
@@ -44,6 +51,7 @@
 			border-radius: 8px;
 			transform: translateY(-20%);
 			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			background-color: rgba(255, 255, 255, 0.9);
 			opacity: 0;
 			transition:
 				opacity 0.3s ease,
@@ -51,6 +59,14 @@
 
 			.menu-item--sub {
 				padding: 8px 16px;
+				transition:
+					color 0.3s ease,
+					background-color 0.3s ease;
+
+				&:hover, &.active {
+					color: #fff;
+					background-color: rgba(35, 63, 125, 0.9)
+				}
 			}
 		}
 

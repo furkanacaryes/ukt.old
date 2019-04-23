@@ -1,3 +1,32 @@
-<p>
-  home works!
-</p>
+
+<acar-ui-carousel
+  [slides]="slides"
+  [custom]="custom"
+  [infinite]="true"
+  [interval]="3000">
+
+    <ng-template #custom let-slide>
+
+      <div
+        class="backdrop"
+        [style.backgroundImage]="'url('+slide.img+')'">
+      </div>
+
+      <div class="foreground">
+        <div class="container">
+          <div class="content__inner">
+            <div class="heading">{{slide.heading}}</div>
+            <div class="description">{{slide.desc}}</div>
+            <div class="button">{{slide.button}}</div>
+          </div>
+        </div>
+
+        <div
+          class="image"
+          [style.backgroundImage]="'url('+slide.img+')'">
+        </div>
+      </div>
+
+    </ng-template>
+  
+</acar-ui-carousel>
