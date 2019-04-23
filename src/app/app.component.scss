@@ -1,31 +1,82 @@
 
 #topbar {
+	position: fixed;
+	top: 0;
+	z-index: 1;
+	width: 100vw;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	padding: 16px;
+	box-sizing: border-box;
 	
 	#logo {
-		width: 64px;
-		height: 64px;
-		background-color: #1fa2ff;
-		border-radius: 50%;
+		width: 96px;
+		height: 96px;
+		background:
+			url('../assets/logo.svg')
+			no-repeat
+			center/cover;
 	}
 
 	nav {
 		display: flex;
-		flex: 0 0 auto;
 
 		.menu-item-slot {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			padding: 0 16px;
 
+			&:last-child {
+				padding-right: 0;
+			}
+
 			.menu-item {
+				font-family: ubuntu;
 				font-weight: bold;
-				color: #1fa2ff;
+				font-size: 14px;
+				color: #233f7dad;
 				transition: color 0.3s ease;
 			
 				&.active {
-					color: #29d;
+					color: #233f7dff;
 				}
+			}
+
+			&:hover .sub-menu-slot {
+				pointer-events: visible;
+			}
+
+			.sub-menu-slot {
+				position: absolute;
+				align-self: end;
+				margin: 16px 0 0;
+				pointer-events: none;
+			}
+
+			.sub-menu {
+				display: flex;
+				flex-direction: column;
+				padding: 16px 0;
+				margin: 16px 0 0;
+				border-radius: 8px;
+				transform: translateY(-20%);
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+				opacity: 0;
+				transition:
+					opacity 0.3s ease,
+					transform 0.3s ease;
+
+				.menu-item--sub {
+					padding: 8px 16px;
+				}
+			}
+
+			&:hover .sub-menu {
+				opacity: 1;
+				transform: translateY(0);
 			}
 		}
 

@@ -9,13 +9,19 @@
 			class="menu-item-slot">
 
 			<ng-container *ngIf="m.sub; else flat">
-				<div class="menu-item">
-					{{m.name}}
+				<a
+					class="menu-item"
+					[routerLink]="m.routerLink"
+					routerLinkActive="active">
+						{{m.name}}
+				</a>
+				<div class="sub-menu-slot">
 					<div class="sub-menu">
 						<a
 							*ngFor="let s of m.sub"
 							[routerLink]="s.routerLink"
-							class="sub-item">
+							routerLinkActive="active"
+							class="menu-item menu-item--sub">
 								{{s.name}}
 						</a>
 					</div>
@@ -25,6 +31,8 @@
 			<ng-template #flat>
 				<a
 					[routerLink]="m.routerLink"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact: true }"
 					class="menu-item menu-item--flat">
 						{{m.name}}
 				</a>
