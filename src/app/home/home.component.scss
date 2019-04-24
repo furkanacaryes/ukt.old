@@ -106,7 +106,7 @@
 		position: absolute;
 		right: 0;
 		width: 60%;
-		height: 100%;
+		height: calc(100% - 128px);
 		border-radius: 32px 0 0 0;
 		background-attachment: fixed;
 		// box-shadow: 0 0 180px -20px rgba(0, 0, 0, 0.6);
