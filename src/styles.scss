@@ -1,5 +1,6 @@
 
 @import 'responsive.scss';
+@import 'acar-ui-carousel.scss';
 
 
 body {
@@ -10,13 +11,7 @@ a {
 	text-decoration: none;
 }
 
-acar-ui-carousel {
-
-	.slide-item {
-		height: 100%;
-	}
-}
-
+// TODO: Mobile-first please!
 .container {
 	width: 992px;
 	margin: 0 auto;

@@ -16,9 +16,12 @@
 	#logo {
 		width: 96px;
 		height: 96px;
+		border-radius: 50%;
 		background:
 			url('../assets/logo.svg')
 			no-repeat
 			center/cover;
+		cursor: pointer;
+		outline: none;
 	}
 }

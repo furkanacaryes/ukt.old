@@ -12,16 +12,26 @@ export class HomeComponent implements OnInit {
       heading: 'Fabrics',
       desc: 'Lorem ipsum dolor sit amet...',
       img: '../assets/acar-carousel/fabrics.jpg',
-      alt: 'Colorful fabrics',
       button: 'İncele'
     },
-    // {
-    //   heading: 'Auxiliaries',
-    //   desc: 'Lorem ipsum dolor sit amet...',
-    //   img: '../assets/acar-carousel/auxiliaries.jpg',
-    //   alt: 'Textile auxiliaries for colorful fabrics',
-    //   button: 'İncele'
-    // },
+    {
+      heading: 'Auxiliaries',
+      desc: 'Lorem ipsum dolor sit amet...',
+      img: '../assets/acar-carousel/auxiliaries.jpg',
+      button: 'İncele'
+    },
+    {
+      heading: 'Color Cotton',
+      desc: 'Lorem ipsum dolor sit amet...',
+      img: '../assets/acar-carousel/colorcotton.jpg',
+      button: 'İncele'
+    },
+    {
+      heading: 'Color Chemistry',
+      desc: 'Lorem ipsum dolor sit amet...',
+      img: '../assets/acar-carousel/colors.jpg',
+      button: 'İncele'
+    }
   ];
 
   constructor() { }
@@ -36,5 +46,4 @@ interface Slide {
   desc: string;
   button?: string;
   img: string;
-  alt: string;
 }
