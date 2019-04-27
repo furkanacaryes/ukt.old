@@ -1,5 +1,5 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
-import { trigger, transition, query, style, animate } from '@angular/animations';
+import { trigger, transition, query, group, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'ukt-products',
@@ -7,8 +7,8 @@ import { trigger, transition, query, style, animate } from '@angular/animations'
   styleUrls: ['./products.component.scss'],
   animations: [
     trigger('showOff', [
-      query('.content', [
-        transition(':enter', [
+      transition(':enter', [
+        query('.content', [
           style({
             opacity: 0,
             filter: 'blur(8px)',
@@ -19,15 +19,23 @@ import { trigger, transition, query, style, animate } from '@angular/animations'
             filter: 'none',
             transform: 'perspective(800px) translateZ(0)'
           }))
-        ]),
-        transition(':leave', [
+        ])
+      ]),
+
+      transition(':leave', group([
+        query('.content', [
           animate('600ms ease', style({
             opacity: 0,
             filter: 'blur(8px)',
             transform: 'perspective(800px) translateZ(200px)'
           }))
+        ]),
+        query('#clone', [
+          animate('600ms ease', style({
+            transform: 'translate3d(0, 0, 0) scale(1)'
+          }))
         ])
-      ])
+      ]))
     ])
   ]
 })
@@ -75,14 +83,22 @@ export class ProductsComponent implements OnInit {
     };
   }
 
-  showStart(event: AnimationEvent) {
+  showStart(clone) {
     for (const prop in this.styles) {
       if (this.styles.hasOwnProperty(prop)) {
-        setTimeout(_ => {
-          this.r2.setStyle(event.element, prop, this.styles[prop]);
-        }, 0);
+        this.setStyle(clone, prop, this.styles[prop]);
       }
     }
+  }
+
+  putItBack(clone) {
+    // console.log(clone);
+    this.selectedProduct = null;
+    // this.setStyle(clone, 'transform', 'unset');
+  }
+
+  setStyle(elem, prop, val) {
+    setTimeout(_ => { this.r2.setStyle(elem, prop, val) }, 0);
   }
 
 }
