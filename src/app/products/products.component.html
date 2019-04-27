@@ -1,3 +1,39 @@
-<p>
-  products works!
-</p>
+
+<div class="container" [class.push]="selectedProduct">
+
+  <div
+    *ngFor="let p of products"
+    class="product"
+    [class.filled]="!!p.name"
+    [class.selected]="p === selectedProduct">
+
+      <div
+        *ngIf="!!p.name"
+        class="hex"
+        (click)="showOff($event, p)"
+        [style.backgroundImage]="'url('+p.img+')'">
+      </div>
+    </div>
+
+</div>
+
+<div
+  *ngIf="selectedProduct"
+  class="detail-layer"
+  [@showOff]="!!selectedProduct">
+
+  <div class="overlay" (click)="selectedProduct = null"></div>
+
+  <div class="container">
+    <div
+      class="product filled"
+      id="clone"
+      (@showOff.start)="showStart($event)">
+      <div
+        class="hex"
+        [style.backgroundImage]="'url('+selectedProduct.img+')'"></div>
+    </div>
+  
+    <div class="content">{{selectedProduct.desc}}</div>
+  </div>
+</div>
