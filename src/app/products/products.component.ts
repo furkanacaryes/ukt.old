@@ -1,49 +1,13 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
-import { trigger, transition, query, group, style, animate } from '@angular/animations';
+import { trigger } from '@angular/animations';
+import showOff from '../Animations/showOff.animation';
 
 @Component({
   selector: 'ukt-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss'],
   animations: [
-    trigger('showOff', [
-      transition(':enter', group([
-        query('.content', [
-          style({
-            opacity: 0,
-            filter: 'blur(8px)',
-            transform: 'perspective(800px) translateZ(300px)'
-          }),
-          animate('600ms ease', style({
-            opacity: 1,
-            filter: 'none',
-            transform: 'perspective(800px) translateZ(0)'
-          }))
-        ]),
-        query('.overlay', [
-          style({ opacity: 0 }),
-          animate('600ms ease', style({ opacity: 1 }))
-        ])
-      ])),
-
-      transition(':leave', group([
-        query('.content', [
-          animate('600ms ease', style({
-            opacity: 0,
-            filter: 'blur(8px)',
-            transform: 'perspective(800px) translateZ(300px)'
-          }))
-        ]),
-        query('#clone', [
-          animate('600ms ease', style({
-            transform: 'translate3d(0, 0, 0) scale(1)'
-          }))
-        ]),
-        query('.overlay', [
-          animate('600ms ease', style({ opacity: 0 }))
-        ])
-      ]))
-    ])
+    trigger('showOff', showOff)
   ]
 })
 export class ProductsComponent implements OnInit {
@@ -79,8 +43,11 @@ export class ProductsComponent implements OnInit {
     // TODO: Save scroll position then set overflow hidden
 
     this.selectedProduct = product;
+
     const { top, left } = (event.target as HTMLDivElement)
       .getBoundingClientRect();
+
+    // Scale up to 3 then calculate left center;
 
     this.styles = {
       top: `${top}px`,
@@ -96,12 +63,6 @@ export class ProductsComponent implements OnInit {
         this.setStyle(clone, prop, this.styles[prop]);
       }
     }
-  }
-
-  putItBack(clone) {
-    // console.log(clone);
-    this.selectedProduct = null;
-    // this.setStyle(clone, 'transform', 'unset');
   }
 
   setStyle(elem, prop, val) {

@@ -23,7 +23,7 @@
   [@showOff]="!!selectedProduct"
   (@showOff.start)="showStart(clone)">
 
-  <div class="overlay" (click)="putItBack(clone)"></div>
+  <div class="overlay" (click)="selectedProduct = null"></div>
 
   <div class="container">
     <div
