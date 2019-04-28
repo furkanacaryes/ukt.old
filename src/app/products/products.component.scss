@@ -20,6 +20,10 @@
 			perspective(800px)
 			translateZ(-300px);
 		filter: blur(8px);
+
+		+ .detail-layer #clone::before {
+			box-shadow: 0 0 80px 10px rgba(0, 0, 0, 0.4);
+		}
 	}
 }
 
@@ -29,9 +33,8 @@
 	margin: 8px;
 
 	&.selected {
-		opacity: 0.6;
+		opacity: 0;
 		transition: none !important;
-		transform: scale(3);
 	}
 
 	&.filled {
@@ -101,7 +104,14 @@
 		position: absolute;
 		opacity: 0;
 		z-index: 1;
-		transition: transform 0.6s ease;
+		transform-origin: top left;
+		transition:
+			transform 0.6s ease,
+			box-shadow 0.6s ease;
+
+		// &::before {
+		// 	box-shadow: 0 0 80px 10px rgba(0, 0, 0, 0.4);
+		// }
 	}
 
 	.content {
@@ -117,5 +127,21 @@
 		transform:
 			perspective(800px)
 			translateZ(0);
+	}
+}
+
+// TODO: Mobile-first Please!
+.slot-area {
+	position: fixed;
+	top: 0;
+	z-index: -1;
+	width: 50%;
+	height: 100%;
+	display: flex;
+
+	.slot {
+		width: 315px;
+		height: 348px;
+		margin: auto;
 	}
 }

@@ -10,7 +10,7 @@
       <div
         *ngIf="!!p.name"
         class="hex"
-        (click)="showOff($event, p)"
+        (click)="showOff($event, p, slot)"
         [style.backgroundImage]="'url('+p.img+')'">
       </div>
     </div>
@@ -37,4 +37,8 @@
   
     <div class="content">{{selectedProduct.desc}}</div>
   </div>
+</div>
+
+<div class="slot-area">
+  <div class="slot" #slot></div>
 </div>

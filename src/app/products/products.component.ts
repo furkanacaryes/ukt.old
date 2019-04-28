@@ -39,21 +39,28 @@ export class ProductsComponent implements OnInit {
     // TODO: Populate array with random indexes(0-20);
   }
 
-  showOff(event: MouseEvent, product) {
+  showOff(event, product, slot) {
     // TODO: Save scroll position then set overflow hidden
 
     this.selectedProduct = product;
 
-    const { top, left } = (event.target as HTMLDivElement)
-      .getBoundingClientRect();
+    const { top, left } = event.target.getBoundingClientRect();
 
-    // Scale up to 3 then calculate left center;
+    const { top: y, left: x } = slot.getBoundingClientRect();
+
+    // x = leftOuter + leftInner;
+    // leftOuter = (window - container) / 2
+    // leftInner = ((isMobile(windowW) ? container : container / 2) - hexW) / 2
+
+    // y = topOuter + topInner
+    // topOuter = topbar
+    // topInner = (((window - topbar) / (isMobile(windowH) ? 2 : 1)) - hexH) / 2
 
     this.styles = {
-      top: `${top}px`,
-      left: `${left}px`,
+      top: `${top - 1.5}px`,
+      left: `${left - 1.3}px`,
       opacity: 1,
-      transform: `translate3d(${-left}px, ${-top}px, 0) scale(3)`
+      transform: `translate3d(${-(left - x)}px, ${y - top}px, 0) scale(3)`
     };
   }
 
