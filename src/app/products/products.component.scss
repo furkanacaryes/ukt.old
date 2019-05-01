@@ -3,7 +3,7 @@
 	position: relative;
 	display: block;
 	width: 100%;
-	min-height: 100vh;
+	height: 100vh;
 	padding: 128px 0;
 	box-sizing: border-box;
 	overflow-y: auto;
@@ -17,9 +17,7 @@
 		filter 0.6s ease;
 
 	&.push {
-		transform:
-			perspective(800px)
-			translateZ(-300px);
+		transform: scale(0.7);
 		filter: blur(8px);
 
 		+ .detail-layer #clone::before {
