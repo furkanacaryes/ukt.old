@@ -4,11 +4,11 @@
   <div
     *ngFor="let p of products"
     class="product"
-    [class.filled]="!!p.name"
+    [class.filled]="!!p?.name"
     [class.selected]="p === selectedProduct">
 
       <div
-        *ngIf="!!p.name"
+        *ngIf="!!p?.name"
         class="hex"
         (click)="showOff($event, p, slot)"
         [style.backgroundImage]="'url('+p.img+')'">

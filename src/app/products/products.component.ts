@@ -12,7 +12,7 @@ import showOff from '../Animations/showOff.animation';
 })
 export class ProductsComponent implements OnInit {
 
-  products: Array<{name, img, desc}> = [
+  _products: Array<{name, img, desc}> = [
     {
       name: 'Textile Chemicals',
       img: '../assets/acar-carousel/auxiliaries.jpg',
@@ -30,37 +30,51 @@ export class ProductsComponent implements OnInit {
     }
   ];
 
+  products = [];
   selectedProduct;
   styles;
 
   constructor( private r2: Renderer2 ) { }
 
   ngOnInit() {
-    // TODO: Populate array with random indexes(0-20);
+    this.shuffle();
+  }
+
+  shuffle() {
+    this._products.forEach(p => this.place(p));
+
+    for (const p of this.products) {
+      if (!p) {
+        const i = this.products.indexOf(p);
+        this.products[i] = 'empty';
+      }
+    }
+  }
+
+  place(p) {
+    const i = this.randomize(28);
+
+    if (this.products.hasOwnProperty(i)) {
+      this.place(p);
+    } else {
+      this.products[i] = p;
+    }
+  }
+
+  randomize(max) {
+    return Math.floor(Math.random() * (max + 1));
   }
 
   showOff(event, product, slot) {
-    // TODO: Save scroll position then set overflow hidden
-
     this.selectedProduct = product;
-
     const { top, left } = event.target.getBoundingClientRect();
-
     const { top: y, left: x } = slot.getBoundingClientRect();
-
-    // x = leftOuter + leftInner;
-    // leftOuter = (window - container) / 2
-    // leftInner = ((isMobile(windowW) ? container : container / 2) - hexW) / 2
-
-    // y = topOuter + topInner
-    // topOuter = topbar
-    // topInner = (((window - topbar) / (isMobile(windowH) ? 2 : 1)) - hexH) / 2
 
     this.styles = {
       top: `${top - 1.5}px`,
       left: `${left - 1.3}px`,
       opacity: 1,
-      transform: `translate3d(${-(left - x)}px, ${y - top}px, 0) scale(3)`
+      transform: `translate3d(${x - left}px, ${y - top}px, 0) scale(3)`
     };
   }
 
