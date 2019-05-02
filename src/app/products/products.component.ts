@@ -33,6 +33,8 @@ export class ProductsComponent implements OnInit {
   products = [];
   selectedProduct;
   styles;
+  imagesTotal = this._products.length;
+  imagesLoaded = 0;
 
   constructor( private r2: Renderer2 ) { }
 
@@ -63,6 +65,10 @@ export class ProductsComponent implements OnInit {
 
   randomize(max) {
     return Math.floor(Math.random() * (max + 1));
+  }
+
+  imageLoaded() {
+    this.imagesLoaded += 1;
   }
 
   showOff(event, product, slot) {

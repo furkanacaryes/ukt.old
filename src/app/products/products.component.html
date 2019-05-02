@@ -1,5 +1,8 @@
 
-<div class="container" [class.push]="selectedProduct">
+<div
+  class="container"
+  [class.push]="selectedProduct"
+  [class.ready]="imagesTotal === imagesLoaded">
 
   <div
     *ngFor="let p of products"
@@ -12,6 +15,7 @@
         class="hex"
         (click)="showOff($event, p, slot)"
         [style.backgroundImage]="'url('+p.img+')'">
+        <img [src]="p.img" (load)="imageLoaded()">
       </div>
     </div>
 
