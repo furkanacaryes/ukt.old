@@ -1,10 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
+import homeEnterAnimation from '../Animations/home.enter.animation';
 
 @Component({
   selector: 'ukt-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  animations: [homeEnterAnimation]
 })
 export class HomeComponent implements OnInit {
 
@@ -35,9 +37,19 @@ export class HomeComponent implements OnInit {
     }
   ];
 
+  loadedCount = 0;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  get isLoaded() {
+    return this.loadedCount === this.slides.length;
+  }
+
+  imageLoaded() {
+    this.loadedCount += 1;
   }
 
 }

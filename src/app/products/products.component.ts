@@ -1,13 +1,14 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
-import { trigger } from '@angular/animations';
+
 import showOff from '../Animations/showOff.animation';
+import productsEnterAnimation from '../Animations/products.enter.animation';
 
 @Component({
   selector: 'ukt-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss'],
   animations: [
-    trigger('showOff', showOff)
+    showOff, productsEnterAnimation
   ]
 })
 export class ProductsComponent implements OnInit {
@@ -33,7 +34,6 @@ export class ProductsComponent implements OnInit {
   products = [];
   selectedProduct;
   styles;
-  imagesTotal = this._products.length;
   imagesLoaded = 0;
 
   constructor( private r2: Renderer2 ) { }
@@ -42,8 +42,22 @@ export class ProductsComponent implements OnInit {
     this.shuffle();
   }
 
+  get isLoaded() {
+    return this._products.length === this.imagesLoaded;
+  }
+
+  isFilled(p) {
+    return typeof p === 'object';
+  }
+
+  isSelected(p) {
+    return p === this.selectedProduct;
+  }
+
   shuffle() {
-    this._products.forEach(p => this.place(p));
+    this._products
+      .map(p => Object.assign(p, { bg: `url('${p.img}')` }))
+      .forEach(p => this.place(p));
 
     for (const p of this.products) {
       if (!p) {

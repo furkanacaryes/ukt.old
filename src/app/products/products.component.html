@@ -2,19 +2,19 @@
 <div
   class="container"
   [class.push]="selectedProduct"
-  [class.ready]="imagesTotal === imagesLoaded">
+  [@enter]="isLoaded">
 
   <div
     *ngFor="let p of products"
     class="product"
-    [class.filled]="!!p?.name"
-    [class.selected]="p === selectedProduct">
+    [class.filled]="isFilled(p)"
+    [class.selected]="isSelected(p)">
 
       <div
-        *ngIf="!!p?.name"
+        *ngIf="isFilled(p)"
         class="hex"
         (click)="showOff($event, p, slot)"
-        [style.backgroundImage]="'url('+p.img+')'">
+        [style.backgroundImage]="p.bg">
         <img [src]="p.img" (load)="imageLoaded()">
       </div>
     </div>
@@ -36,7 +36,7 @@
       id="clone">
       <div
         class="hex"
-        [style.backgroundImage]="'url('+selectedProduct.img+')'"></div>
+        [style.backgroundImage]="selectedProduct.bg"></div>
     </div>
   
     <div class="content">{{selectedProduct.desc}}</div>

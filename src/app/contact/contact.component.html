@@ -1,3 +1,42 @@
-<p>
-  contact works!
-</p>
+
+<section [@enter]="isLoaded">
+
+    <agm-map
+    [latitude]="lat"
+    [longitude]="lng"
+    [zoom]="zoom"
+    (mapReady)="isLoaded = true">
+  
+    <agm-marker
+      [latitude]="marker.lat"
+      [longitude]="marker.lng">
+    </agm-marker>
+  </agm-map>
+
+  <div class="container">
+    <div class="info-box-layout">
+      <div class="info-box">
+
+        <div class="heading">İletişim</div>
+
+        <div class="contact-item">
+          <div class="contact-item__icon phone"></div>
+          <div class="contact-item__content">
+            <div *ngFor="let p of phones">{{p}}</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-item__icon location"></div>
+          <div class="contact-item__content">
+            <ng-container *ngFor="let l of location">
+              {{l}}<br/>
+            </ng-container>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>

@@ -1,5 +1,6 @@
 
 <acar-ui-carousel
+  [@enter]="isLoaded"
   [slides]="slides"
   [custom]="custom"
   [infinite]="true"
@@ -30,3 +31,7 @@
     </ng-template>
   
 </acar-ui-carousel>
+
+<ng-container *ngFor="let s of slides">
+  <img [src]="s.img" (load)="imageLoaded()">
+</ng-container>
