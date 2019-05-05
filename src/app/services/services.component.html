@@ -1,3 +1,17 @@
-<p>
-  services works!
-</p>
+
+<section>
+  <div class="container">
+    <nav>
+      <div
+        *ngFor="let s of services"
+        [routerLink]="s.routerLink"
+        class="nav-item">
+        {{s.name}}
+      </div>
+    </nav>
+  
+    <div id="service-outlet">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</section>

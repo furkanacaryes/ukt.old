@@ -11,9 +11,18 @@ export class MenuComponent implements OnInit {
     { name: 'Anasayfa',   routerLink: '/' },
     { name: 'Hakkımızda', routerLink: '/hakkimizda' },
     { name: 'Servisler',  routerLink: '/servisler', sub: [
-      { name: 'Kalite Kontrol Labarotuvarı', routerLink: '/servisler/a' },
-      { name: 'Uygulama Labarotuvarı', routerLink: '/servisler/b' },
-      { name: 'Teknik Destek', routerLink: '/servisler/c' }
+      {
+        name: 'Kalite Kontrol Labarotuvarı',
+        routerLink: '/servisler/kalite-kontrol-laboratuvari'
+      },
+      {
+        name: 'Uygulama Labarotuvarı',
+        routerLink: '/servisler/uygulama-laboratuvari'
+      },
+      {
+        name: 'Teknik Destek',
+        routerLink: '/servisler/teknik-destek'
+      }
     ]},
     { name: 'Ürünler',    routerLink: '/urunler' },
     { name: 'İletişim',   routerLink: '/iletisim' },

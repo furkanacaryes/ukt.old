@@ -7,6 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicesComponent implements OnInit {
 
+  // Duplicated but not that much to
+  // make you create a service.
+  // Deal with it.
+  services = [
+    {
+      name: 'Kalite Kontrol Labarotuvarı',
+      routerLink: '/servisler/kalite-kontrol-laboratuvari'
+    },
+    {
+      name: 'Uygulama Labarotuvarı',
+      routerLink: '/servisler/uygulama-laboratuvari'
+    },
+    {
+      name: 'Teknik Destek',
+      routerLink: '/servisler/teknik-destek'
+    }
+  ];
+
   constructor() { }
 
   ngOnInit() {
