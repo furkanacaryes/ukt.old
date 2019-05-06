@@ -1,14 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import contactEnterAnimation from '../Animations/about.enter.animation';
+import aboutEnterAnimation from '../Animations/about.enter.animation';
+
+import { AppService } from '../app.service';
+import { debounceTime } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'ukt-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
-  animations: [contactEnterAnimation('.info-box')]
+  animations: [aboutEnterAnimation('.info-box')]
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent implements OnInit, OnDestroy {
 
   lat = 40.095677;
   // lng = 29.513057; Original Point
@@ -20,24 +24,25 @@ export class ContactComponent implements OnInit {
     lng: this.lng + 0.001500
   };
 
-  phones = [
-    '(0224) 714 95 96',
-    '(0224) 714 91 92',
-    '(0224) 719 27 48'
-  ];
-
-  location = [
-    'Sinanbey Mahallesi',
-    'Metal İşleri Sanayi Sitesi',
-    '18.Sokak',
-    'No: 1',
-    'İnegöl/Bursa'
-  ];
-
   isLoaded = false;
+  ready = false;
 
-  constructor() { }
+  sub: Subscription;
 
-  ngOnInit() { }
+  constructor( private _appService: AppService ) { }
+
+  ngOnInit() {
+    this.sub = this._appService.ui
+      .pipe(debounceTime(100))
+      .subscribe(state => this.ready = !state.isBusy);
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
+
+  get isReady() {
+    return this.isLoaded && this.ready;
+  }
 
 }

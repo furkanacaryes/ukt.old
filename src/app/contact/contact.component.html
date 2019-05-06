@@ -1,7 +1,7 @@
 
-<section [@enter]="isLoaded">
+<section [@enter]="isReady">
 
-    <agm-map
+  <agm-map
     [latitude]="lat"
     [longitude]="lng"
     [zoom]="zoom"
@@ -22,16 +22,19 @@
         <div class="contact-item">
           <div class="contact-item__icon phone"></div>
           <div class="contact-item__content">
-            <div *ngFor="let p of phones">{{p}}</div>
+            <div>(0224) 714 95 96</div>
+            <div>(0224) 714 91 92</div>
+            <div>(0224) 719 27 48</div>
           </div>
         </div>
 
         <div class="contact-item">
           <div class="contact-item__icon location"></div>
           <div class="contact-item__content">
-            <ng-container *ngFor="let l of location">
-              {{l}}<br/>
-            </ng-container>
+            Sinanbey Mahallesi,<br/>
+            Metal İşleri Sanayi Sitesi,<br/>
+            18.Sokak, No: 1,<br/><br/>
+            İnegöl/Bursa<br/>
           </div>
         </div>
 

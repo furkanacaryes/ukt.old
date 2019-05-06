@@ -53,10 +53,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.sub = this._appService.ui
       .pipe(debounceTime(100))
-      .subscribe(state => {
-        console.log(`[HOME] isBusy: ${state.isBusy}`);
-        this.ready = !state.isBusy;
-      });
+      .subscribe(state => this.ready = !state.isBusy);
   }
 
   ngOnDestroy() {

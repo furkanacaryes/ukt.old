@@ -13,8 +13,6 @@ import { AppService } from './app.service';
 })
 export class AppComponent implements OnInit {
 
-  location;
-
   constructor( private _appService: AppService ) {}
 
   ngOnInit() { }
@@ -31,7 +29,5 @@ export class AppComponent implements OnInit {
     } else {
       this.location = component.name;
     }
-
-    console.log(`%c${this.location}`, 'color: yellow; font-weight: bold');
   }
 }

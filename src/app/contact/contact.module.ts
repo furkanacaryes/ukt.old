@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Route, RouterModule } from '@angular/router';
 
-import { AgmCoreModule } from '@agm/core';
+import { ContactComponent } from './contact.component';
+
 import { environment } from '../../environments/environment';
 
-import { ContactComponent } from './contact.component';
+import { AgmCoreModule } from '@agm/core';
+
+import { SharedModule } from '../shared.module';
 
 const routes: Route[] = [
   { path: '', component: ContactComponent }
@@ -15,8 +18,11 @@ const routes: Route[] = [
   declarations: [ContactComponent],
   imports: [
     CommonModule,
+    AgmCoreModule.forRoot({
+      apiKey: environment.MAPS_API_KEY
+    }),
     RouterModule.forChild(routes),
-    AgmCoreModule.forRoot({ apiKey: environment.MAPS_API_KEY })
+    SharedModule,
   ]
 })
 export class ContactModule { }

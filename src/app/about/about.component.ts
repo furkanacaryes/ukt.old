@@ -24,13 +24,8 @@ export class AboutComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.sub = this._appService.ui
-      .pipe(
-        debounceTime(100)
-      )
-      .subscribe(state => {
-        console.log(`[ABOUT] isBusy: ${state.isBusy}`);
-        this.ready = !state.isBusy;
-      });
+      .pipe(debounceTime(100))
+      .subscribe(state => this.ready = !state.isBusy);
   }
 
   ngOnDestroy() {
