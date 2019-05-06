@@ -1,4 +1,11 @@
-import { trigger, transition, query, style, animate, group } from '@angular/animations';
+import {
+  trigger,
+  transition,
+  query,
+  style,
+  animate,
+  group
+} from '@angular/animations';
 
 export default trigger('showOff', [
   transition(':enter', group([

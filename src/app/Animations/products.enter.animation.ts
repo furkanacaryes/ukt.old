@@ -1,4 +1,13 @@
-import { trigger, state, transition, query, stagger, group, style, animate } from "@angular/animations";
+import {
+  trigger,
+  state,
+  transition,
+  query,
+  stagger,
+  group,
+  style,
+  animate
+} from '@angular/animations';
 
 export default trigger('enter', [
   state('false', style({ opacity: 0 })),

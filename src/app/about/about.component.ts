@@ -1,6 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import aboutEnterAnimation from '../Animations/about.enter.animation';
+
+import { Subscription } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
+
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'ukt-about',
@@ -8,14 +13,32 @@ import aboutEnterAnimation from '../Animations/about.enter.animation';
   styleUrls: ['./about.component.scss'],
   animations: [aboutEnterAnimation('.about-layout')]
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent implements OnInit, OnDestroy {
 
   isLoaded = false;
+  ready = false;
   background = '../../assets/about-bg.png';
+  sub: Subscription;
 
-  constructor() { }
+  constructor( private _appService: AppService ) { }
 
   ngOnInit() {
+    this.sub = this._appService.ui
+      .pipe(
+        debounceTime(100)
+      )
+      .subscribe(state => {
+        console.log(`[ABOUT] isBusy: ${state.isBusy}`);
+        this.ready = !state.isBusy;
+      });
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
+
+  get isReady() {
+    return this.isLoaded && this.ready;
   }
 
 }

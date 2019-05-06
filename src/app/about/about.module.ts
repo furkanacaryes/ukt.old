@@ -4,6 +4,8 @@ import { Route, RouterModule } from '@angular/router';
 
 import { AboutComponent } from './about.component';
 
+import { SharedModule } from '../shared.module';
+
 const routes: Route[] = [
   { path: '', component: AboutComponent }
 ];
@@ -12,7 +14,8 @@ const routes: Route[] = [
   declarations: [AboutComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    SharedModule
   ]
 })
 export class AboutModule { }
