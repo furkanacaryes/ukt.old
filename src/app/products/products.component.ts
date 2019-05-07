@@ -5,7 +5,7 @@ import productsEnterAnimation from '../Animations/products.enter.animation';
 
 import { AppService } from '../app.service';
 import { Subscription } from 'rxjs';
-import { debounceTime } from 'rxjs/operators';
+import { debounceTime, map } from 'rxjs/operators';
 
 @Component({
   selector: 'ukt-products',
@@ -72,10 +72,6 @@ export class ProductsComponent implements OnInit, OnDestroy {
     return typeof p === 'object';
   }
 
-  isSelected(p) {
-    return p === this.selectedProduct;
-  }
-
   shuffle() {
     this._products
       .map(p => Object.assign(p, { bg: `url('${p.img}')` }))
@@ -106,8 +102,12 @@ export class ProductsComponent implements OnInit, OnDestroy {
     this.imagesLoaded += 1;
   }
 
-  showOff(event, product, slot) {
-    this.selectedProduct = product;
+  showOff(event: MouseEvent, product, slot) {
+
+    this.selectedProduct = event.target.parentElement;
+    this.selectedProduct.p = product;
+    this.r2.addClass(this.selectedProduct, 'selected');
+
     const { top, left } = event.target.getBoundingClientRect();
     const { top: y, left: x } = slot.getBoundingClientRect();
 
@@ -129,6 +129,11 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   setStyle(elem, prop, val) {
     setTimeout(_ => { this.r2.setStyle(elem, prop, val) }, 0);
+  }
+
+  unselect() {
+    this.r2.removeClass(this.selectedProduct, 'selected');
+    this.selectedProduct = null;
   }
 
 }
