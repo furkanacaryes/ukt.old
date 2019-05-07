@@ -1,7 +1,11 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, Renderer2, OnDestroy } from '@angular/core';
 
 import showOff from '../Animations/showOff.animation';
 import productsEnterAnimation from '../Animations/products.enter.animation';
+
+import { AppService } from '../app.service';
+import { Subscription } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'ukt-products',
@@ -11,7 +15,7 @@ import productsEnterAnimation from '../Animations/products.enter.animation';
     showOff, productsEnterAnimation
   ]
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent implements OnInit, OnDestroy {
 
   _products: Array<{name, img, desc}> = [
     {
@@ -36,10 +40,28 @@ export class ProductsComponent implements OnInit {
   styles;
   imagesLoaded = 0;
 
-  constructor( private r2: Renderer2 ) { }
+  sub: Subscription;
+  ready = false;
+
+  constructor(
+    private r2: Renderer2,
+    private _appService: AppService
+  ) { }
 
   ngOnInit() {
     this.shuffle();
+
+    this.sub = this._appService.ui
+      .pipe(debounceTime(100))
+      .subscribe(state => this.ready = !state.isBusy);
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
+
+  get isReady() {
+    return this.isLoaded && this.ready;
   }
 
   get isLoaded() {
@@ -59,9 +81,8 @@ export class ProductsComponent implements OnInit {
       .map(p => Object.assign(p, { bg: `url('${p.img}')` }))
       .forEach(p => this.place(p));
 
-    for (const p of this.products) {
-      if (!p) {
-        const i = this.products.indexOf(p);
+    for (let i = 0; i <= 28; i++) {
+      if (!this.products[i]) {
         this.products[i] = 'empty';
       }
     }

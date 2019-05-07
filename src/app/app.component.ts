@@ -13,6 +13,8 @@ import { AppService } from './app.service';
 })
 export class AppComponent implements OnInit {
 
+  location;
+
   constructor( private _appService: AppService ) {}
 
   ngOnInit() { }

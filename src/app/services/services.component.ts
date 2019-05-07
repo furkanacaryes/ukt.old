@@ -1,5 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
+import servicesEnterAnimation from '../Animations/services.enter.animation';
+
 import { AppService } from '../app.service';
 import { Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
@@ -7,7 +9,8 @@ import { debounceTime } from 'rxjs/operators';
 @Component({
   selector: 'ukt-services',
   templateUrl: './services.component.html',
-  styleUrls: ['./services.component.scss']
+  styleUrls: ['./services.component.scss'],
+  animations: [servicesEnterAnimation]
 })
 export class ServicesComponent implements OnInit, OnDestroy {
 

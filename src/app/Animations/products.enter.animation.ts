@@ -10,10 +10,11 @@ import {
 } from '@angular/animations';
 
 export default trigger('enter', [
+  state('void', style({ opacity: 0 })),
   state('false', style({ opacity: 0 })),
   state('true', style({ opacity: 1 })),
 
-  transition('false => true', group([
+  transition('* => true', group([
     query('.product', [
       style({
         opacity: 0,
