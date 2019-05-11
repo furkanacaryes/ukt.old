@@ -1,9 +1,11 @@
 
 #topbar {
-	position: fixed;
+	// Mobile-first Please!
+	// position: fixed;
+	position: absolute;
 	top: 0;
 	z-index: 2;
-	width: 100vw;
+	width: 100%;
 	padding: 16px 0;
 	box-sizing: border-box;
 
@@ -28,4 +30,5 @@
 
 #outlet-wrapper {
 	background-color: rgba(35, 63, 125, 0.2);
+	min-height: 100vh;
 }

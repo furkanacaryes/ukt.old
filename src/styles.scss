@@ -24,3 +24,91 @@ img {
 	width: 0;
 	height: 0;
 }
+
+// Primary Button
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: max-content;
+	padding: 8px 8px 8px 32px;
+	border-radius: 64px;
+	background-color: #fff;
+	box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+	font-weight: bold;
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
+
+	&:hover {
+		transform: translateY(-8px);
+		box-shadow: 0 10px 40px 0px rgba(0, 0, 0, 0.2);
+	}
+
+	&::after {
+		content: '';
+		padding: 16px;
+		margin: 0 0 0 24px;
+		background-color: #233f7d;
+		mask:
+			url('./assets/acar-icons/arrow.svg')
+			no-repeat
+			center/cover;
+	}
+}
+
+
+// Services
+.image-text-row {
+	display: flex;
+
+	.image {
+		position: relative;
+		top: 16px;
+		left: 16px;
+		flex: 1 0 auto;
+		width: 40%;
+		height: 300px;
+		margin: 0 64px 0 0;
+		border-radius: 8px;
+		box-shadow: 0 0 80px rgba(0, 0, 0, 0.6);
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: -16px;
+			left: -16px;
+			z-index: -1;
+			width: calc(100% - 16px);
+			height: calc(100% - 16px);
+			border: 6px solid #233f7dff;
+			border-radius: 8px;
+		}
+	}
+	
+	.text {
+		color: #233f7dff;
+
+		.boxed-items {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin: 24px 0 40px 0;
+
+			.boxed {
+				width: max-content;
+				padding: 8px 16px;
+				border-radius: 8px;
+				background-color: #fff;
+				color: #233f7dff;
+				font-weight: bold;
+				box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+	
+				&:nth-child(even) {
+					transform: translateY(16px)
+				}
+			}
+		}
+	}
+}

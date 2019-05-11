@@ -26,10 +26,11 @@ export class AppComponent implements OnInit {
   routing(o: RouterOutlet) {
     const { component, children } = o.activatedRoute;
 
-    if (children.length > 0) {
-      this.location = children[0].component.name;
-    } else {
-      this.location = component.name;
-    }
+    // if (children.length > 0) {
+    //   this.location = children[0].component.name;
+    // } else {
+    //   this.location = component.name;
+    // }
+    this.location = (component as {name: string}).name;
   }
 }

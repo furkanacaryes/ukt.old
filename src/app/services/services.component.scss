@@ -1,7 +1,6 @@
 
 :host {
 	display: block;
-	height: 100vh;
 }
 
 section {
@@ -10,26 +9,79 @@ section {
 	font-family: ubuntu;
 }
 
-nav {
-	display: none;
-	// display: flex;
-	border-radius: 8px;
-	overflow: hidden;
-	box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
-	width: max-content;
-	margin: 0 auto;
+.head {
+	position: relative;
+	z-index: 0;
+	// TODO: Mobile-first Please!
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 
-	.nav-item {
-		padding: 16px 24px;
-		background-color: rgba(255, 255, 255, 0.8);
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		background:
+			url('../../assets/acar-carousel/colorcotton.jpg')
+			no-repeat
+			center/cover;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		background-image: linear-gradient(
+			to bottom,
+			rgba(255, 255, 255, 0.9),
+			rgba(255, 255, 255, 0.8),
+			#d5dae6
+		);
+	}
+
+	.heading {
+		font-size: 40px;
+		font-weight: bold;
 		color: #233f7dff;
-		font-size: 14px;
-		transition: font-weight 0.3s ease;
-		cursor: pointer;
-		outline: none;
 
-		&.active {
-			font-weight: bold;
+		&::before {
+			content: 'Servisler';
 		}
 	}
+
+	nav {
+		position: absolute;
+		bottom: 64px;
+		display: flex;
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);
+	
+		.nav-item {
+			padding: 16px 24px;
+			background-color: rgba(35, 63, 125, 0.9);
+			color: #fff;
+			font-size: 14px;
+			transition: font-weight 0.3s ease;
+			cursor: pointer;
+			outline: none;
+	
+			&.active {
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+#service-outlet {
+	padding: 0 0 96px 0;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
 }
