@@ -21,6 +21,7 @@ section {
 		height: 100%;
 	
 		&::after {
+			content: '';
 			position: absolute;
 			top: 0;
 			left: 0;

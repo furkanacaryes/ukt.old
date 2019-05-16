@@ -102,7 +102,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
     this.imagesLoaded += 1;
   }
 
-  showOff(event: MouseEvent, product, slot) {
+  showOff(event: { target }, product, slot) {
 
     this.selectedProduct = event.target.parentElement;
     this.selectedProduct.p = product;
