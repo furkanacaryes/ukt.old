@@ -43,6 +43,10 @@ export class ProductsComponent implements OnInit, OnDestroy {
   sub: Subscription;
   ready = false;
 
+  top;
+
+  listener = ['scroll', () => document.scrollingElement.scrollTop = this.top];
+
   constructor(
     private r2: Renderer2,
     private _appService: AppService
@@ -104,6 +108,11 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   showOff(event: { target }, product, slot) {
 
+    // this.setStyle(event.target.closest('body'), 'overflow', 'hidden', 600);
+    // TODO: Check if isBrowser
+    this.top = document.scrollingElement.scrollTop;
+    window.addEventListener(...this.listener);
+
     this.selectedProduct = event.target.parentElement;
     this.selectedProduct.p = product;
     this.r2.addClass(this.selectedProduct, 'selected');
@@ -127,11 +136,14 @@ export class ProductsComponent implements OnInit, OnDestroy {
     }
   }
 
-  setStyle(elem, prop, val) {
-    setTimeout(_ => { this.r2.setStyle(elem, prop, val) }, 0);
+  setStyle(elem, prop, val, delay = 0) {
+    setTimeout(_ => this.r2.setStyle(elem, prop,  val), delay);
   }
 
   unselect() {
+    // this.r2.setStyle(this.selectedProduct.closest('body'), 'overflow', 'unset');
+    // TODO: Check if isBrowser
+    setTimeout(() => window.removeEventListener(...this.listener), 600);
     this.r2.removeClass(this.selectedProduct, 'selected');
     this.selectedProduct = null;
   }
