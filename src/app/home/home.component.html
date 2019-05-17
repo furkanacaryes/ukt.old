@@ -1,10 +1,13 @@
 
 <acar-ui-carousel
+  #carousel
   [@enter]="isReady"
   [slides]="slides"
   [custom]="custom"
   [infinite]="true"
-  [interval]="5000">
+  [interval]="5000"
+  (swipeleft)="carousel.next()"
+  (swiperight)="carousel.prev()">
 
     <ng-template #custom let-slide>
 
