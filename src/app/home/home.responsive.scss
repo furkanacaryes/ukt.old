@@ -1,59 +1,64 @@
 
-/* iPhone 5 */ 
-@media only screen and (min-width : 320px) {}
+:host {
 
-
-/* iPhone 6/7/8 */
-@media only screen and (min-width : 375px) {}
-
-
-/* Phones */ 
-@media only screen and (min-width : 480px) {}
-
-
-/* Custom */
-@media only screen and (min-width : 600px) {}
-
-
-/* Small Devices, Tablets */
-@media only screen and (min-width : 768px) {
-
-	.backdrop {
-		display: block;
-	}
-
-	.foreground {
-		flex-direction: unset;
-		padding: 128px 0 0 0;
-		justify-content: center;
-
-		.image {
-			position: absolute;
-			right: 0;
-			width: 60%;
-			height: calc(100% - 128px);
-			border-radius: 32px 0 0 0;
-			background-attachment: fixed;
+	/* iPhone 5 */ 
+	@media only screen and (min-width : 320px) {}
+	
+	
+	/* iPhone 6/7/8 */
+	@media only screen and (min-width : 375px) {}
+	
+	
+	/* Phones */ 
+	@media only screen and (min-width : 480px) {}
+	
+	
+	/* Custom */
+	@media only screen and (min-width : 600px) {}
+	
+	
+	/* Small Devices, Tablets */
+	@media only screen and (min-width : 768px) {
+	
+		.backdrop {
+			display: block;
 		}
-
-		.container {
-			justify-content: unset;
+	
+		.foreground {
+			flex-direction: unset;
+			padding: 128px 0 0 0;
+			justify-content: center;
+	
+			.image {
+				position: absolute;
+				right: 0;
+				width: 60%;
+				height: calc(100% - 128px);
+				border-radius: 32px 0 0 0;
+				background-attachment: fixed;
+			}
+	
+			.container {
+				justify-content: unset;
+			}
+	
+			.content__inner {
+				max-width: calc(50% - 10vw - 64px);
+				align-items: unset;
+			}
 		}
-
-		.content__inner {
-			max-width: calc(50% - 10vw - 64px);
-		}
+		
 	}
 	
+	
+	/* Medium Devices, Desktops */
+	@media only screen and (min-width : 992px) {}
+	
+	
+	/* Large Devices, Wide Screens */
+	@media only screen and (min-width : 1200px) {}
+	
+	
+	@media only screen and (min-width : 1366px) {}
+
 }
-
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width : 992px) {}
-
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px) {}
-
-
-@media only screen and (min-width : 1366px) {}

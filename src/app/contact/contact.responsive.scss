@@ -19,38 +19,38 @@
 	
 	/* Small Devices, Tablets */
 	@media only screen and (min-width : 768px) {
-	
-		#topbar {
-			position: absolute;
-			background-image: none;
-			padding: 16px 0;
-			box-shadow: none;
-	
-			.container {
-				justify-content: space-between;
-				padding: 0;
-			}
-	
-			#logo {
-				position: unset;
-				width: 96px;
-				height: 96px;
-				box-shadow: unset;
-				border: none;
-				background-color: transparent;
-				background-size: cover;
-			}
-	
-			.menu-launcher {
-				display: none;
-			}
-	
-			ukt-menu {
+
+		section {
+			align-items: center;
+
+			.info-box-layout {
+				display: unset;
+				width: 50%;
 				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				.info-box {
+					flex: unset;
+					padding: 70px 120px;
+					font-size: 16px;
+
+					.contact-item {
+						align-self: baseline;
+					}
+
+					&::after {
+						mask-position: center;
+						mask-size: contain;
+					}
+				}
 			}
 		}
-	
-	
+
+		agm-map {
+			position: absolute;
+		}
+		
 	}
 	
 	
@@ -63,5 +63,5 @@
 	
 	
 	@media only screen and (min-width : 1366px) {}
-
+	
 }
