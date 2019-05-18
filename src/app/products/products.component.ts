@@ -124,8 +124,14 @@ export class ProductsComponent implements OnInit, OnDestroy {
       top: `${top - 1.5}px`,
       left: `${left - 1.3}px`,
       opacity: 1,
-      transform: `translate3d(${x - left}px, ${y - top}px, 0) scale(3)`
+      transform: `
+        translate3d(${x - left}px, ${y - top}px, 0)
+        scale(${this.isMobile ? 2 : 3})`
     };
+  }
+
+  get isMobile() {
+    return window.innerWidth < 768;
   }
 
   showStart(clone) {

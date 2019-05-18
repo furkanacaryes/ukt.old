@@ -20,39 +20,31 @@
 	/* Small Devices, Tablets */
 	@media only screen and (min-width : 768px) {
 
-		min-height: 100vh;
+		.detail-layer {
 
-		section {
-			padding: 80px 0 0 0;
-			background:
-				url('../../assets/about-bg.png')
-				no-repeat
-				-140px 0/cover;
-			background-attachment: unset;
-			height: 100vh;
-
-			&::before {
-				background-image:
-					linear-gradient(to top, rgba(36, 63, 125, 0.7), transparent),
-					linear-gradient(to left, #fff 15%, transparent 80%),
-					linear-gradient(to right, #fff 0%, transparent 30%);
+			.container {
+				flex-direction: unset;
 			}
 
-			.about-layout {
-				width: 50%;
+			.content {
+				position: relative;
 				left: 50%;
-				margin: 0;
-
-				.heading {
-					font-size: 40px;
-				}
-
-				.content {
-					padding: 32px 0;
-				}
+				width: 50%;
+				max-height: 60%;
+				margin: auto 0;
 			}
 		}
-	
+
+		.slot-area {
+			top: 0;
+			width: 50%;
+			height: 100%;
+
+			.slot {
+				width: 315px;
+				height: 348px;
+			}
+		}
 		
 	}
 	
