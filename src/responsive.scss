@@ -25,8 +25,84 @@
 
 	acar-ui-carousel {
 
+		.slide-item {
+			perspective-origin: right bottom;
+
+			&.deepPrev {}
+
+			&.prev {
+				transition: opacity 0s ease 1s;
+
+				.image {
+					transform:
+						rotateZ(-15deg)
+						translate3d(-150%, 100%, -400px);
+				}
+			}
+
+			&.current {}
+
+			&.next {
+				transition: opacity 0s ease 1s;
+
+				.image {
+					transform:
+						rotateZ(15deg)
+						translate3d(100%, -100%, 400px);
+				}
+			}
+
+			&.deepNext {}
+		}
+
 		.slider__buttons {
 			display: flex;
+		}
+	}
+
+
+	// Services
+	.head {
+		height: 400px;
+	
+		.nav {
+			position: absolute;
+			bottom: 64px;
+			left: unset;
+			border-radius: 8px;
+
+			.nav-item {
+				font-size: 14px;
+			}
+		}
+	}
+	
+	#service-outlet {
+
+		.image-text-row {
+			flex-direction: unset;
+
+			.image {
+				width: 40%;
+				height: 300px;
+				margin: 0 64px 0 0;
+			}
+
+			.text {
+				display: block;
+
+				.boxed-items {
+					justify-content: space-between;
+
+					.boxed {
+						margin: 0;
+
+						&:nth-child(even) {
+							transform: translateY(16px)
+						}
+					}
+				}
+			}
 		}
 	}
 	

@@ -9,7 +9,8 @@ acar-ui-carousel {
 		z-index: -1;
 		opacity: 0;
 		perspective: 800px;
-		perspective-origin: right bottom;
+		perspective-origin: top;
+		transition: opacity 0.6s ease;
 
 		.backdrop,
 		.container {
@@ -25,12 +26,19 @@ acar-ui-carousel {
 			transition: transform 1s ease;
 		}
 
-		&.deepPrev {}
+		&.deepPrev {
+			z-index: 0;
+
+			.image {
+				transform:
+					rotateZ(-15deg)
+					translate3d(-200%, 80%, -400px);
+			}
+		}
 
 		&.prev {
-			z-index: 0;
+			z-index: 1;
 			opacity: 1;
-			transition: opacity 0s ease 1s;
 
 			.backdrop {
 				transition: opacity 0s ease .76s;
@@ -39,12 +47,12 @@ acar-ui-carousel {
 			.image {
 				transform:
 					rotateZ(-15deg)
-					translate3d(-150%, 100%, -400px)
+					translate3d(-180%, 80%, -400px);
 			}
 		}
 
 		&.current {
-			z-index: 1;
+			z-index: 2;
 			opacity: 1;
 
 			.backdrop {
@@ -59,9 +67,8 @@ acar-ui-carousel {
 		}
 
 		&.next {
-			z-index: 0;
+			z-index: 1;
 			opacity: 1;
-			transition: opacity 0s ease 1s;
 
 			.backdrop {
 				transition: opacity 0s ease .76s;
@@ -69,12 +76,20 @@ acar-ui-carousel {
 
 			.image {
 				transform:
-					rotateZ(15deg)
-					translate3d(100%, -100%, 400px)
+					rotateZ(5deg)
+					translate3d(160%, 0, -500px)
 			}
 		}
 
-		&.deepNext {}
+		&.deepNext {
+			z-index: 0;
+
+			.image {
+				transform:
+					rotateZ(5deg)
+					translate3d(200%, 0, -500px)
+			}
+		}
 	}
 
 	.slider__buttons {
