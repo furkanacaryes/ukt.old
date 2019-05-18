@@ -18,15 +18,30 @@
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
 
-	.container {
-		width: 992px;
-		margin: 0 auto;
+	.backdrop {
+		display: block;
 	}
 
-	acar-ui-carousel {
+	.foreground {
+		flex-direction: unset;
+		padding: 128px 0 0 0;
+		justify-content: center;
 
-		.slider__buttons {
-			display: flex;
+		.image {
+			position: absolute;
+			right: 0;
+			width: 60%;
+			height: calc(100% - 128px);
+			border-radius: 32px 0 0 0;
+			background-attachment: fixed;
+		}
+
+		.container {
+			justify-content: unset;
+		}
+
+		.content__inner {
+			max-width: calc(50% - 10vw - 64px);
 		}
 	}
 	

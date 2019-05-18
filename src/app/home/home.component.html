@@ -4,8 +4,8 @@
   [@enter]="isReady"
   [slides]="slides"
   [custom]="custom"
+  [fivePoint]="isMobile"
   [infinite]="true"
-  [interval]="5000"
   (swipeleft)="carousel.next()"
   (swiperight)="carousel.prev()">
 
@@ -21,7 +21,11 @@
           <div class="content__inner">
             <div class="heading">{{slide.heading}}</div>
             <div class="description">{{slide.desc}}</div>
-            <div class="button">{{slide.button}}</div>
+            <div
+              class="button"
+              [innerText]="slide.button"
+              [routerLink]="slide.routerLink">
+            </div>
           </div>
         </div>
 

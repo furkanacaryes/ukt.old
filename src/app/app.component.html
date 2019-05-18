@@ -2,7 +2,12 @@
 <section id="topbar">
 	<div class="container">
 		<div id="logo" routerLink="/"></div>
-		<!-- TODO: Add Menu Collapser -->
+
+		<div
+			class="menu-launcher"
+			(click)="toggleMenu()">
+		</div>
+
 		<ukt-menu></ukt-menu>
 	</div>
 </section>

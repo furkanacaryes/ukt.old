@@ -1,6 +1,6 @@
 
 acar-ui-carousel {
-	background-color: none !important;
+	background-color: transparent !important;
 
 	.slide-item {
 		position: absolute;
@@ -73,6 +73,8 @@ acar-ui-carousel {
 					translate3d(100%, -100%, 400px)
 			}
 		}
+
+		&.deepNext {}
 	}
 
 	.slider__buttons {
@@ -80,7 +82,7 @@ acar-ui-carousel {
 		z-index: 2;
     right: calc(60% + 64px);
     bottom: 64px;
-    display: flex;
+    display: none;
 
     .slider__button {
         padding: 16px;

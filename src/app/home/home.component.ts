@@ -20,25 +20,36 @@ export class HomeComponent implements OnInit, OnDestroy {
       heading: 'Fabrics',
       desc: 'Lorem ipsum dolor sit amet...',
       img: '../assets/acar-carousel/fabrics.jpg',
-      button: 'İncele'
+      button: 'İncele',
+      routerLink: '/servisler'
     },
     {
       heading: 'Auxiliaries',
       desc: 'Lorem ipsum dolor sit amet...',
       img: '../assets/acar-carousel/auxiliaries.jpg',
-      button: 'İncele'
+      button: 'İncele',
+      routerLink: '/iletisim'
     },
     {
       heading: 'Color Cotton',
       desc: 'Lorem ipsum dolor sit amet...',
       img: '../assets/acar-carousel/colorcotton.jpg',
-      button: 'İncele'
+      button: 'İncele',
+      routerLink: '/iletisim'
     },
     {
       heading: 'Color Chemistry',
       desc: 'Lorem ipsum dolor sit amet...',
       img: '../assets/acar-carousel/colors.jpg',
-      button: 'İncele'
+      button: 'İncele',
+      routerLink: '/iletisim'
+    },
+    {
+      heading: '5th Item',
+      desc: 'Lorem ipsum dolor sit amet...',
+      img: '../assets/acar-carousel/colorcotton.jpg',
+      button: 'İncele',
+      routerLink: '/iletisim'
     }
   ];
 
@@ -60,6 +71,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.sub.unsubscribe();
   }
 
+  get isMobile() {
+    return window.innerWidth < 768;
+  }
+
   get isLoaded() {
     return this.loadedCount === this.slides.length;
   }
@@ -79,4 +94,5 @@ interface Slide {
   desc: string;
   button?: string;
   img: string;
+  routerLink?: string;
 }

@@ -11,10 +11,10 @@ a {
 	text-decoration: none;
 }
 
-// TODO: Mobile-first please!
 .container {
-	width: 992px;
-	margin: 0 auto;
+	width: 100%;
+	padding: 0 16px;
+	box-sizing: border-box;
 }
 
 img {

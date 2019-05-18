@@ -1,4 +1,6 @@
 
+@import 'home.responsive.scss';
+
 :host {
 	position: relative;
 	display: block;
@@ -7,9 +9,8 @@
 }
 
 .backdrop {
+	display: none;
 	position: absolute;
-	// width: 100%;
-	// height: 100%;
 	filter: blur(8px);
 	top: -8px;
 	left: -8px;
@@ -45,18 +46,24 @@
 .foreground {
 	position: relative;
 	display: flex;
+	flex-direction: column-reverse;
 	width: 100%;
 	height: 100%;
-	padding: 128px 0 0 0;
+	padding: 96px 0 0 0;
+	justify-content: space-around;
+	align-items: center;
 	box-sizing: border-box;
 
 	.container {
 		display: flex;
 		align-items: center;
+		justify-content: center;
 	}
 	
 	.content__inner {
-		max-width: calc(50% - 10vw - 64px);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		color: #233f7d;
 		font-family: ubuntu;
 
@@ -73,13 +80,11 @@
 	}
 
 	.image {
-		position: absolute;
-		right: 0;
-		width: 60%;
-		height: calc(100% - 128px);
-		border-radius: 32px 0 0 0;
-		background-attachment: fixed;
-		// box-shadow: 0 0 180px -20px rgba(0, 0, 0, 0.6);
+		width: 60vw;
+    height: 60vw;
 		box-shadow: 0 20px 150px 20px rgba(0, 0, 0, 0.6);
+		border-radius: 32px;
+    background-size: cover;
+    background-position: center;
 	}
 }

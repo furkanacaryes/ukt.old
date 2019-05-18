@@ -1,8 +1,8 @@
 
+@import 'app.responsive.scss';
+
 #topbar {
-	// Mobile-first Please!
-	// position: fixed;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	z-index: 2;
 	width: 100%;
@@ -12,12 +12,12 @@
 	.container {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: center;
 	}
 	
 	#logo {
-		width: 96px;
-		height: 96px;
+		width: 64px;
+		height: 64px;
 		border-radius: 50%;
 		background:
 			url('../assets/logo.svg')
@@ -25,6 +25,22 @@
 			center/cover;
 		cursor: pointer;
 		outline: none;
+	}
+
+	.menu-launcher {
+		position: absolute;
+		left: 16px;
+		width: 24px;
+		height: 24px;
+		mask:
+			url('../assets/acar-icons/menu.svg')
+			no-repeat
+			center/cover;
+		background-color: #233f7d;
+	}
+
+	ukt-menu {
+		display: none;
 	}
 }
 

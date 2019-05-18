@@ -18,18 +18,26 @@
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
 
-	.container {
-		width: 992px;
-		margin: 0 auto;
-	}
+	#topbar {
+		position: absolute;
+		background-color: #fff;
+		box-shadow: 0 0 60px rgba(0, 0, 0, 0.3);
 
-	acar-ui-carousel {
+		.container {
+			justify-content: space-between;
+		}
 
-		.slider__buttons {
-			display: flex;
+		#logo {
+			width: 96px;
+			height: 96px;
+		}
+
+		.menu-launcher {
+			display: none;
 		}
 	}
-	
+
+
 }
 
 
