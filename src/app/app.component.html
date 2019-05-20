@@ -1,26 +1,30 @@
 
-<section id="topbar">
-	<div class="container">
-		<div id="logo" routerLink="/"></div>
+<div id="window" [class.menuView]="menuView">
 
-		<div
-			class="menu-launcher"
-			(click)="toggleMenu()">
+	<section id="topbar">
+		<div class="container">
+			<div id="logo" routerLink="/"></div>
+	
+			<div
+				class="menu-launcher"
+				(click)="toggleMenu()">
+			</div>
+	
+			<ukt-menu [@somethingCool]="menuView"></ukt-menu>
 		</div>
+	</section>
+	
+	<section
+		id="outlet-wrapper"
+		[@byebye]="location"
+		(@byebye.start)="setState(true)"
+		(@byebye.done)="setState(false)">
+	
+			<router-outlet
+				id="outlet"
+				#o="outlet"
+				(activate)="routing(o)">
+			</router-outlet>
+	</section>
 
-		<ukt-menu></ukt-menu>
-	</div>
-</section>
-
-<section
-	id="outlet-wrapper"
-	[@byebye]="location"
-	(@byebye.start)="setState(true)"
-	(@byebye.done)="setState(false)">
-
-		<router-outlet
-			id="outlet"
-			#o="outlet"
-			(activate)="routing(o)">
-		</router-outlet>
-</section>
+</div>

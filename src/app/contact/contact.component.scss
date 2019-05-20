@@ -6,7 +6,7 @@
 	display: block;
 	width: 100vw;
 	height: 100vh;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 section {
@@ -36,13 +36,24 @@ section {
 	
 	.info-box-layout {
 		position: relative;
-		top: 70%;
+		top: calc(100vh - 140px);
 		display: flex;
 		justify-content: center;
+		transition: all 0.6s ease;
+
+		&.informed {
+			transform: translateY(-90%);
+
+			.info-box {
+				transform: unset;
+			}
+		}
 
 		.info-box {
 			position: relative;
 			min-width: 340px;
+			transform: rotateZ(-30deg);
+			transition: all 0.6s ease;
 			z-index: 0;
 			display: flex;
 			flex: 1 0 auto;
@@ -77,15 +88,19 @@ section {
 				mask:
 					url('../../assets/acar-icons/hex.svg')
 					no-repeat
-					center 0/100%;
-				background-color: #233f7dff;
+					center/contain;
+				background-color: rgba(35, 63, 125, 0.8);
 			}
 
 			.heading {
-				font-size: 40px;
-				margin: 16px 0;
+				position: absolute;
+				top: 50px;
+				left: 60px;
+				width: 100%;
+				transform: rotateZ(30deg);
+				text-align: center;
+				font-size: 16px;
 				font-weight: bold;
-				text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 			}
 
 			.contact-item {

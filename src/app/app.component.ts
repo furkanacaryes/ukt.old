@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import byebyeAnimation from './Animations/byebye.animation';
-// import menuCollapseAnimation from './Animations/menu.collapse.animation';
+import somethingCool from './Animations/menu.animation';
 
 import { AppService } from './app.service';
 
@@ -12,7 +12,7 @@ import { AppService } from './app.service';
   styleUrls: ['./app.component.scss'],
   animations: [
     byebyeAnimation,
-    // menuCollapseAnimation
+    somethingCool
   ]
 })
 export class AppComponent implements OnInit {
@@ -22,7 +22,15 @@ export class AppComponent implements OnInit {
 
   constructor( private _appService: AppService ) {}
 
-  ngOnInit() { }
+  ngOnInit() {
+    // TODO: Check if isBrowser
+    this.setMenuView();
+    window.addEventListener('resize', (e) => this.setMenuView());
+  }
+
+  setMenuView() {
+    this.menuView = this.isMobile ? false : null;
+  }
 
   toggleMenu() {
     if (this.isMobile) {
@@ -41,5 +49,7 @@ export class AppComponent implements OnInit {
   routing(o: RouterOutlet) {
     const { component } = o.activatedRoute;
     this.location = (component as { name }).name;
+
+    this.menuView = false;
   }
 }

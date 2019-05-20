@@ -14,18 +14,19 @@ import { Subscription } from 'rxjs';
 })
 export class ContactComponent implements OnInit, OnDestroy {
 
-  lat = 40.095677;
-  // lng = 29.513057; Original Point
-  lng = 29.511557;
-  zoom = 17;
-
   marker = {
-    lat: this.lat,
-    lng: this.lng + 0.001500
+    lat: 40.095699,
+    lng: 29.513072
   };
+
+  lat = this.marker.lat;
+  lng = this.isMobile ? this.marker.lng : 29.511557;
+  zoom = 17;
 
   isLoaded = false;
   ready = false;
+
+  informed = false;
 
   sub: Subscription;
 
@@ -45,4 +46,11 @@ export class ContactComponent implements OnInit, OnDestroy {
     return this.isLoaded && this.ready;
   }
 
+  get isMobile() {
+    return window.innerWidth < 768;
+  }
+
+  toggleInfo() {
+    this.informed = !this.informed;
+  }
 }

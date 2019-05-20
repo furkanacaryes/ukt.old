@@ -14,7 +14,10 @@
   </agm-map>
 
   <div class="container">
-    <div class="info-box-layout">
+    <div
+      class="info-box-layout"
+      (click)="toggleInfo()"
+      [class.informed]="informed">
       <div class="info-box">
 
         <div class="heading">İletişim</div>
