@@ -24,7 +24,8 @@
 			transition:
 				color 0.3s ease,
 				background-color 0.3s ease,
-				font-weight 0.3s ease;
+				font-weight 0.3s ease,
+				text-shadow 0.3s ease;
 		
 			&.active {
 				color: #233f7dff;

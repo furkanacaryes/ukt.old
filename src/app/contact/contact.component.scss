@@ -46,6 +46,19 @@ section {
 
 			.info-box {
 				transform: unset;
+
+				.heading {
+					color: transparent;
+
+					&::before,
+					&::after {
+						opacity: 1;
+					}
+
+					&::after {
+						transform: rotateZ(15deg);
+					}
+				}
 			}
 		}
 
@@ -73,7 +86,8 @@ section {
 				width: 100%;
 				height: 100%;
 				border-radius: 50%;
-				background-color: rgba(0, 0, 0, 0.3);
+				background-image:
+					radial-gradient(200px, #000 40%, transparent);
 				filter: blur(16px);
 			}
 
@@ -101,6 +115,34 @@ section {
 				text-align: center;
 				font-size: 16px;
 				font-weight: bold;
+				transition: color 0.6s ease;
+
+				&::before,
+				&::after {
+					content: '';
+					position: absolute;
+					left: calc(50% - 12px);
+					width: 24px;
+					height: 24px;
+				}
+
+				&::before {
+					border-radius: 50%;
+					background-color: rgba(35, 63, 125, 0.8);
+					box-shadow: 0 0 80px 10px rgba(0, 0, 0, 0.6);
+					transition: opacity 0.6s ease;
+				}
+
+				&::after {
+					mask:
+						url(../../assets/acar-icons/add.svg)
+						no-repeat
+						center/cover;
+					background-color: #fff;
+					transition:
+						opacity 0.6s ease,
+						transform 0.6s ease;
+				}
 			}
 
 			.contact-item {

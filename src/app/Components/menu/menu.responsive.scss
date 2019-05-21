@@ -31,10 +31,15 @@
 
 			.menu-item {
 				font-size: 20px;
-				color: rgba(255, 255, 255, 0.8);
+				font-weight: 500;
+				color: rgba(255, 255, 255, 0.6);
 
 				&.active {
 					color: #fff;
+					text-shadow:
+						0 0 100px #fff,
+						0 0 50px #fff,
+						0 0 10px #fff;
 				}
 			}
 		}
