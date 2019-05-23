@@ -1,5 +1,5 @@
 
-<section [@enter]="isReady">
+<section [@enter]="animateOrWhat">
 
   <agm-map
     [latitude]="lat"
@@ -17,7 +17,7 @@
     <div
       class="info-box-layout"
       (click)="toggleInfo()"
-      [class.informed]="informed">
+      [class.informed]="informed && isMobile">
       <div class="info-box">
 
         <div class="heading">İletişim</div>

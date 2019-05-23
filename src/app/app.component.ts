@@ -18,7 +18,7 @@ import { AppService } from './app.service';
 export class AppComponent implements OnInit {
 
   location;
-  menuView;
+  menuView = false;
 
   constructor( private _appService: AppService ) {}
 

@@ -19,7 +19,7 @@ export default trigger('somethingCool', [
     backgroundPosition: '0 0'
   })),
 
-  transition('* => true', group([
+  transition('false => true', group([
 
     query('.menu-item-slot', [
       style({
@@ -37,7 +37,7 @@ export default trigger('somethingCool', [
     animate('600ms ease')
   ])),
 
-  transition('* => false', group([
+  transition('true => false', group([
 
     query('.menu-item-slot', [
       style({

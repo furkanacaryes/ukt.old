@@ -50,7 +50,12 @@ export class ContactComponent implements OnInit, OnDestroy {
     return window.innerWidth < 768;
   }
 
+  get animateOrWhat() {
+    return this.isMobile ? 'disabled' : this.isReady;
+  }
+
   toggleInfo() {
     this.informed = !this.informed;
   }
+
 }

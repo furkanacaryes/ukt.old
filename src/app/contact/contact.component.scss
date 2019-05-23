@@ -66,7 +66,9 @@ section {
 			position: relative;
 			min-width: 340px;
 			transform: rotateZ(-30deg);
-			transition: all 0.6s ease;
+			transition:
+				transform 0.6s ease,
+				filter 0.6s ease;
 			z-index: 0;
 			display: flex;
 			flex: 1 0 auto;
@@ -121,9 +123,11 @@ section {
 				&::after {
 					content: '';
 					position: absolute;
+					top: -70px;
 					left: calc(50% - 12px);
 					width: 24px;
 					height: 24px;
+					opacity: 0;
 				}
 
 				&::before {
@@ -131,6 +135,8 @@ section {
 					background-color: rgba(35, 63, 125, 0.8);
 					box-shadow: 0 0 80px 10px rgba(0, 0, 0, 0.6);
 					transition: opacity 0.6s ease;
+					padding: 8px;
+					margin: -8px 0 0 -8px;
 				}
 
 				&::after {

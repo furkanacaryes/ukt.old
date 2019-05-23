@@ -14,6 +14,9 @@ export default (target) => {
     state('void', style({ opacity: 0 })),
     state('false', style({ opacity: 0 })),
     state('true', style({ opacity: 1 })),
+    state('disabled', style({ opacity: 1 })),
+
+    transition('* => disabled', animate('600ms ease')),
 
     transition('* => true', group([
       query(target, [
