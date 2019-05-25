@@ -15,7 +15,7 @@ import { SharedModule } from './shared.module';
     MenuComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({appId: 'ukt-2019'}),
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule.forRoot()

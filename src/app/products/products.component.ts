@@ -108,13 +108,14 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   showOff(event: { target }, product, slot) {
 
-    // this.setStyle(event.target.closest('body'), 'overflow', 'hidden', 600);
-    // TODO: Check if isBrowser
-    this.top = document.scrollingElement.scrollTop;
-    window.addEventListener(
-      'scroll',
-      () => document.scrollingElement.scrollTop = this.top
-    );
+    if (this._appService.isBrowser) {
+      this.top = document.scrollingElement.scrollTop;
+
+      window.addEventListener(
+        'scroll',
+        () => document.scrollingElement.scrollTop = this.top
+      );
+    }
 
     this.selectedProduct = event.target.parentElement;
     this.selectedProduct.p = product;
@@ -134,7 +135,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
   }
 
   get isMobile() {
-    return window.innerWidth < 768;
+    return this._appService.isMobile;
   }
 
   showStart(clone) {
@@ -150,12 +151,12 @@ export class ProductsComponent implements OnInit, OnDestroy {
   }
 
   unselect() {
-    // this.r2.setStyle(this.selectedProduct.closest('body'), 'overflow', 'unset');
-    // TODO: Check if isBrowser
-    setTimeout(() => window.removeEventListener(
-        'scroll',
-        () => document.scrollingElement.scrollTop = this.top
-    ), 600);
+    if (this._appService.isBrowser) {
+      setTimeout(() => window.removeEventListener(
+          'scroll',
+          () => document.scrollingElement.scrollTop = this.top
+      ), 600);
+    }
     this.r2.removeClass(this.selectedProduct, 'selected');
     this.selectedProduct = null;
   }

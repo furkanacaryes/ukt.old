@@ -23,9 +23,11 @@ export class AppComponent implements OnInit {
   constructor( private _appService: AppService ) {}
 
   ngOnInit() {
-    // TODO: Check if isBrowser
     this.setMenuView();
-    window.addEventListener('resize', (e) => this.setMenuView());
+
+    if (this._appService.isBrowser) {
+      window.addEventListener('resize', (e) => this.setMenuView());
+    }
   }
 
   setMenuView() {
@@ -39,7 +41,7 @@ export class AppComponent implements OnInit {
   }
 
   get isMobile() {
-    return window.innerWidth < 768;
+    return this._appService.isMobile;
   }
 
   setState(isBusy: boolean) {
@@ -48,7 +50,10 @@ export class AppComponent implements OnInit {
 
   routing(o: RouterOutlet) {
     const { component } = o.activatedRoute;
-    this.location = (component as { name }).name;
+
+    if (component.hasOwnProperty('name')) {
+      this.location = component.name;
+    }
 
     this.menuView = false;
   }

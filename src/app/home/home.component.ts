@@ -72,7 +72,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   get isMobile() {
-    return window.innerWidth < 768;
+    return this._appService.isMobile;
   }
 
   get isLoaded() {
