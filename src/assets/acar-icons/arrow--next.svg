@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.6638743"
-     inkscape:cx="29.355753"
-     inkscape:cy="11.956812"
+     inkscape:zoom="8.9313753"
+     inkscape:cx="30.043501"
+     inkscape:cy="14.648647"
      inkscape:document-units="px"
      inkscape:current-layer="g5200-2"
      showgrid="false"
@@ -50,7 +50,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -63,11 +63,10 @@
        transform="matrix(1.3945609,0,0,1.3945609,-4764.2478,-1079.1207)"
        id="g5200-2">
       <path
-         sodipodi:nodetypes="cccccccccccc"
-         inkscape:connector-curvature="0"
-         id="path5507-2-9-1-8"
-         d="m 3605.8783,949.50325 36.5951,0 5.2988,-0.0557 -5.2988,5.56376 0,4.2336 11.1496,-11.52424 -11.4619,-11.42205 0,4.14096 5.8287,5.56375 -5.8287,0.0446 -36.2828,0.29973 z"
-         style="fill:#233f7d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.39200211px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#233f7d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.9177345px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+         d="M 50.642578 0.060546875 L 50.642578 7.1308594 L 57.011719 13.5 L 0 13.5 L 0 18.5 L 57.011719 18.5 L 50.642578 24.869141 L 50.642578 31.939453 L 63.046875 19.535156 L 66.582031 16 L 63.046875 12.464844 L 50.642578 0.060546875 z "
+         transform="matrix(0.71707159,0,0,0.71707159,3605.8783,936.29862)"
+         id="rect4139" />
     </g>
   </g>
 </svg>

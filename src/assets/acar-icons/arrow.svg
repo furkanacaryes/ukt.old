@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="108.7456"
-     inkscape:cy="-57.653671"
+     inkscape:zoom="10.197806"
+     inkscape:cx="24.796561"
+     inkscape:cy="20.304997"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -39,7 +39,9 @@
      inkscape:window-height="705"
      inkscape:window-x="0"
      inkscape:window-y="30"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true" />
   <metadata
      id="metadata6052">
     <rdf:RDF>
@@ -48,7 +50,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -58,9 +60,9 @@
      id="layer1"
      transform="translate(-23.600308,-22.439716)">
     <path
-       inkscape:connector-curvature="0"
        style="opacity:1;fill:#233f7d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 39.566331,22.439727 A 16.03241,16.03241 0 0 0 23.600308,37.158551 l 13.938488,-0.131519 4.888007,-0.03726 -4.888007,-4.666618 0,-3.47203 9.611625,9.578743 -9.350776,9.664226 0,-3.548737 4.445227,-4.666618 -4.445227,0.04601 -14.186184,0 A 16.03241,16.03241 0 0 0 39.566331,54.505481 16.03241,16.03241 0 0 0 55.600308,38.473693 16.03241,16.03241 0 0 0 39.566331,22.439716 Z"
-       id="path5505-1-5-5" />
+       d="M 16 0.06640625 A 16 16 0 0 0 0.12695312 14.15625 L 20.816406 14.15625 L 16.035156 9.375 L 16.035156 4.0683594 L 25.345703 13.378906 L 28 16.033203 L 25.345703 18.6875 L 16.035156 27.998047 L 16.035156 22.691406 L 20.816406 17.910156 L 0.12695312 17.910156 A 16 16 0 0 0 16 32.066406 A 16 16 0 0 0 32 16.066406 A 16 16 0 0 0 16 0.06640625 z "
+       transform="translate(23.600308,22.439716)"
+       id="path4140" />
   </g>
 </svg>
