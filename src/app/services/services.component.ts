@@ -18,26 +18,7 @@ import { debounceTime } from 'rxjs/operators';
 })
 export class ServicesComponent implements OnInit, OnDestroy {
 
-  // Duplicated but not that much to
-  // make you create a service.
-  // Deal with it.
-  services = [
-    {
-      name: 'Kalite Kontrol Labarotuvarı',
-      routerLink: '/servisler/kalite-kontrol-laboratuvari',
-      component: 'KKLabComponent'
-    },
-    {
-      name: 'Uygulama Labarotuvarı',
-      routerLink: '/servisler/uygulama-laboratuvari',
-      component: 'ULabComponent'
-    },
-    {
-      name: 'Teknik Destek',
-      routerLink: '/servisler/teknik-destek',
-      component: 'TechSupportComponent'
-    }
-  ];
+  services = this._appService.services;
 
   images = [
     '../../assets/acar-carousel/colorcotton.jpg',

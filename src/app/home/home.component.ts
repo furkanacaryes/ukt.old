@@ -62,6 +62,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor( private _appService: AppService ) { }
 
   ngOnInit() {
+    this._appService.updateMeta({
+      title: 'Anasayfa',
+      description: 'Tekstil Kimyasalları',
+      image: this.slides[0].img,
+      route: ''
+    });
+
     this.sub = this._appService.ui
       .pipe(debounceTime(100))
       .subscribe(state => this.ready = !state.isBusy);

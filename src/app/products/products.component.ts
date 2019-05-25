@@ -2,6 +2,7 @@ import { Component, OnInit, Renderer2, OnDestroy } from '@angular/core';
 
 import showOff from '../Animations/showOff.animation';
 import productsEnterAnimation from '../Animations/products.enter.animation';
+import { PRODUCTS_STATIC_DATA } from './products.data';
 
 import { AppService } from '../app.service';
 import { Subscription } from 'rxjs';
@@ -17,42 +18,32 @@ import { debounceTime, map } from 'rxjs/operators';
 })
 export class ProductsComponent implements OnInit, OnDestroy {
 
-  _products: Array<{name, img, desc}> = [
-    {
-      name: 'Textile Chemicals',
-      img: '../assets/acar-carousel/auxiliaries.jpg',
-      desc: 'Lorem ipsum dolor sit amet...'
-    },
-    {
-      name: 'Fabrics',
-      img: '../assets/acar-carousel/fabrics.jpg',
-      desc: 'Lorem ipsum dolor sit amet...'
-    },
-    {
-      name: 'Color Chemistry',
-      img: '../assets/acar-carousel/colorcotton.jpg',
-      desc: 'Lorem ipsum dolor sit amet...'
-    }
-  ];
-
+  _products = PRODUCTS_STATIC_DATA;
   products = [];
   selectedProduct;
-  styles;
-  imagesLoaded = 0;
 
   sub: Subscription;
+  imagesLoaded = 0;
   ready = false;
-
+  styles;
   top;
-
   listener = ['scroll', _ => document.scrollingElement.scrollTop = this.top];
+
 
   constructor(
     private r2: Renderer2,
     private _appService: AppService
   ) { }
 
+
   ngOnInit() {
+    this._appService.updateMeta({
+      title: 'Ürünler',
+      description: 'Tekstil Kimyasalları',
+      image: this._products[0].img,
+      route: 'urunler'
+    });
+
     this.shuffle();
 
     this.sub = this._appService.ui
@@ -60,21 +51,31 @@ export class ProductsComponent implements OnInit, OnDestroy {
       .subscribe(state => this.ready = !state.isBusy);
   }
 
+
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
+
 
   get isReady() {
     return this.isLoaded && this.ready;
   }
 
+
   get isLoaded() {
     return this._products.length === this.imagesLoaded;
   }
 
+
+  get isMobile() {
+    return this._appService.isMobile;
+  }
+
+
   isFilled(p) {
     return typeof p === 'object';
   }
+
 
   shuffle() {
     this._products
@@ -88,6 +89,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
     }
   }
 
+
   place(p) {
     const i = this.randomize(28);
 
@@ -98,13 +100,16 @@ export class ProductsComponent implements OnInit, OnDestroy {
     }
   }
 
+
   randomize(max) {
     return Math.floor(Math.random() * (max + 1));
   }
 
+
   imageLoaded() {
     this.imagesLoaded += 1;
   }
+
 
   showOff(event: { target }, product, slot) {
 
@@ -131,9 +136,6 @@ export class ProductsComponent implements OnInit, OnDestroy {
     };
   }
 
-  get isMobile() {
-    return this._appService.isMobile;
-  }
 
   showStart(clone) {
     for (const prop in this.styles) {
@@ -143,9 +145,11 @@ export class ProductsComponent implements OnInit, OnDestroy {
     }
   }
 
+
   setStyle(elem, prop, val, delay = 0) {
     setTimeout(_ => this.r2.setStyle(elem, prop,  val), delay);
   }
+
 
   unselect() {
     if (this._appService.isBrowser) {
