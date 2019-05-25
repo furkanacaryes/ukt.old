@@ -1,24 +1,39 @@
 
+interface Product {
+  name: string;
+  img: string;
+  data?: any[];
+}
+
 export const PRODUCTS_STATIC_DATA: Product[] = [
   {
-    name: 'Textile Chemicals',
+    name: 'Enzimler',
     img: '../assets/acar-carousel/auxiliaries.jpg',
-    desc: 'Lorem ipsum dolor sit amet...'
+    data: [
+      { chemical: 'PEROZYM HPK',  desc: 'Konsantre antiperoksit enzimi' },
+      { chemical: 'TORAPOLISH W', desc: 'Tüy dökücü enzim' },
+      { chemical: 'PEROZYM 216',  desc: 'Antiperoksit enzimi' },
+      { chemical: 'TORASIZE NHE', desc: 'Nişasta haşılı sökme enzimi' }
+    ]
   },
   {
     name: 'Fabrics',
     img: '../assets/acar-carousel/fabrics.jpg',
-    desc: 'Lorem ipsum dolor sit amet...'
+    data: [
+      { chemical: 'PEROZYM HPK',  desc: 'Konsantre antiperoksit enzimi' },
+      { chemical: 'TORAPOLISH W', desc: 'Tüy dökücü enzim' },
+      { chemical: 'PEROZYM 216',  desc: 'Antiperoksit enzimi' },
+      { chemical: 'TORASIZE NHE', desc: 'Nişasta haşılı sökme enzimi' }
+    ]
   },
   {
     name: 'Color Chemistry',
     img: '../assets/acar-carousel/colorcotton.jpg',
-    desc: 'Lorem ipsum dolor sit amet...'
+    data: [
+      { chemical: 'PEROZYM HPK',  desc: 'Konsantre antiperoksit enzimi' },
+      { chemical: 'TORAPOLISH W', desc: 'Tüy dökücü enzim' },
+      { chemical: 'PEROZYM 216',  desc: 'Antiperoksit enzimi' },
+      { chemical: 'TORASIZE NHE', desc: 'Nişasta haşılı sökme enzimi' }
+    ]
   }
 ];
-
-interface Product {
-  name: string;
-  img: string;
-  desc: string;
-}

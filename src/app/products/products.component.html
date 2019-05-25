@@ -39,7 +39,14 @@
       </div>
     </div>
   
-    <div class="content">{{selectedProduct.p.desc}}</div>
+    <div class="content">
+      <div class="scroll-area">
+        <div class="data-row" *ngFor="let data of selectedProduct.p.data">
+          <div class="chemical">{{data.chemical}}</div>
+          <div class="description">{{data.desc}}</div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
