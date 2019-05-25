@@ -49,12 +49,16 @@ export class AppComponent implements OnInit {
   }
 
   routing(o: RouterOutlet) {
-    const { component } = o.activatedRoute;
+    const component = (o.activatedRoute.component as IComponent);
 
-    if (component.hasOwnProperty('name')) {
+    if ((component).hasOwnProperty('name')) {
       this.location = component.name;
     }
 
     this.menuView = false;
   }
+}
+
+interface IComponent {
+  name?: string;
 }
