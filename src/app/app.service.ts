@@ -62,24 +62,11 @@ export class AppService {
       ['', 'og:url',          `http://localhost:4200/${meta.route}`],
     ];
 
-    this._title.setTitle(meta.title);
+    this._title.setTitle(`UKT Kimya | ${meta.title}`);
 
     tags.forEach(([name, property, content]) => {
       this._meta.updateTag({name, property, content});
     });
-
-    // this._meta.updateTag({ name: 'twitter:card', content: 'summary' });
-    // this._meta.updateTag({ name: 'twitter:site', content: '@uktkimya' });
-    // this._meta.updateTag({ name: 'twitter:title', content: meta.title });
-    // this._meta.updateTag({ name: 'twitter:description', content: meta.description });
-    // this._meta.updateTag({ name: 'twitter:image', content: meta.image });
-
-    // this._meta.updateTag({ property: 'og:type', content: 'article' });
-    // this._meta.updateTag({ property: 'og:site_name', content: 'UKT Kimya' });
-    // this._meta.updateTag({ property: 'og:title', content: meta.title });
-    // this._meta.updateTag({ property: 'og:description', content: meta.description });
-    // this._meta.updateTag({ property: 'og:image', content: meta.image });
-    // this._meta.updateTag({ property: 'og:url', content: `https://uktkimya.com/${meta.route}` });
   }
 }
 

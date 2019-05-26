@@ -17,13 +17,13 @@ export default trigger('servicesTransition', [
       }),
       animate('600ms 600ms ease', style({
         opacity: 1,
-        position: '*'
+        // position: '*'
       }))
     ]),
 
     query(':leave', [
       style({
-        position: 'absolute'
+        position: 'absolute',
       }),
       animate('600ms ease', style({
         opacity: 0

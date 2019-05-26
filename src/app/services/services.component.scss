@@ -63,13 +63,16 @@ section {
 		position: fixed;
 		bottom: 0;
 		left: 0;
+		width: 100%;
 		display: flex;
+		justify-content: space-evenly;
 		overflow: hidden;
+		background-color: rgba(35, 63, 125, 0.9);
 		box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);
 	
 		.nav-item {
 			padding: 16px 24px;
-			background-color: rgba(35, 63, 125, 0.9);
+			// background-color: rgba(35, 63, 125, 0.9);
 			color: #fff;
 			font-size: 10px;
 			transition: font-weight 0.3s ease;

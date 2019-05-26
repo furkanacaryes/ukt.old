@@ -42,6 +42,9 @@ export default trigger('showOff', [
     ]),
     query('.overlay', [
       animate('600ms ease', style({ opacity: 0 }))
+    ]),
+    query('.hoverlay', [
+      animate('600ms ease', style({ opacity: 1 }))
     ])
   ]))
 ]);

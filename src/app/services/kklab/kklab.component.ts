@@ -13,7 +13,7 @@ export class KKLabComponent implements OnInit {
 
   ngOnInit() {
     this._appService.updateMeta({
-      title: 'Kalite Kontrol Labarotuvarı',
+      title: 'Kalite Kontrol Laboratuvarı',
       description: 'Kalite kontrol işlemleri, birinci kalite pazarlanabilir mal üretmek için gereklidir.',
       image: '',
       route: 'servisler/kalite-kontrol-laboratuvari'

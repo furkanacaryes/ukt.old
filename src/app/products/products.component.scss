@@ -30,6 +30,9 @@
 
 	&:first-of-type {
 		opacity: 0;
+		width: 304px;
+		margin: 0 auto;
+		padding: 0;
 
 		&.ready {
 			opacity: 1;
@@ -41,7 +44,7 @@
 .product {
 	width: 105px;
 	height: 116px;
-	margin: 8px;
+	margin: 0 8px;
 
 	&.selected {
 		opacity: 0;
@@ -72,10 +75,6 @@
 		&:hover {
 			transform: scale(1.12);
 			z-index: 1;
-			
-			&::before {
-				box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.6);
-			}
 		}
 	}
 
@@ -90,19 +89,26 @@
 			no-repeat
 			center/contain;
 
-			// img { Moved into styles.scss
-			// 	position: absolute;
-			// 	z-index: -1;
-			// 	display: none;
-			// 	width: 0;
-			// 	height: 0;
-			// }
+		.hoverlay {
+			height: 100%;
+			color: #fff;
+			font-weight: bold;
+			font-family: ubuntu;
+			font-size: 14px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			background-color: rgba(36, 63, 125, 0.7);
+			transition: opacity 0.3s ease;
+		}
 	}
 }
 
 .detail-layer {
 	position: fixed;
-	z-index: 2;
+	z-index: 3;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -122,12 +128,22 @@
 
 	.product#clone {
 		position: absolute;
+		margin: 8px;
 		opacity: 0;
 		z-index: 1;
 		transform-origin: top left;
 		transition:
 			transform 0.6s ease,
 			box-shadow 0.6s ease;
+
+		.hex .hoverlay {
+			animation: showOff 400ms ease 200ms normal forwards;
+		}
+
+		@keyframes showOff {
+			from { opacity: 1 }
+			to   { opacity: 0 }
+		}
 	}
 
 	.content {
@@ -176,9 +192,32 @@
 				);
 		}
 
+		.heading {
+			position: relative;
+			padding: 16px 32px 16px 64px;
+			font-size: 18px;
+			font-family: ubuntu;
+			font-weight: bold;
+			box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
+
+			&::before {
+				content: '';
+				display: block;
+				mask:
+					url('../../assets/acar-icons/arrow--prev.svg')
+					no-repeat center/contain;
+				background-color: #243f7d;
+				width: 24px;
+				height: 24px;
+				position: absolute;
+				left: 32px;
+				cursor: pointer;
+			}
+		}
+
 		.scroll-area {
 			overflow-y: auto;
-			max-height: calc(50vh - 96px);
+			max-height: calc(50vh - 146px);
 			padding: 32px;
 			box-sizing: border-box;
 
@@ -189,6 +228,7 @@
 				border-bottom: 1px solid rgba(35, 63, 125, 0.3);
 				font-family: ubuntu;
 				font-size: 14px;
+				line-height: 1.4;
 	
 				&:last-child {
 					border-bottom: none;

@@ -19,7 +19,7 @@ export class ULabComponent implements OnInit {
       yeni geliştirilen ürünlerin performansını test etmek ve müşterilerimizin sorunlarına interaktif çözümler bulmaktır.
       `,
       image: '',
-      route: 'servisler/uygulama-laboratuvar'
+      route: 'servisler/uygulama-laboratuvari'
     });
   }
 

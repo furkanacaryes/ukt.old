@@ -119,7 +119,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
       window.addEventListener(...this.listener);
     }
 
-    this.selectedProduct = event.target.parentElement;
+    this.selectedProduct = event.target.closest('.product');
     this.selectedProduct.p = product;
     this.r2.addClass(this.selectedProduct, 'selected');
 

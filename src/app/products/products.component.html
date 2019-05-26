@@ -14,7 +14,11 @@
         class="hex"
         (click)="showOff($event, p, slot)"
         [style.backgroundImage]="p.bg">
+
+          <div class="hoverlay">{{p.name}}</div>
+
           <img [src]="p.img" (load)="imageLoaded()">
+
       </div>
     </div>
 
@@ -36,10 +40,18 @@
       <div
         class="hex"
         [style.backgroundImage]="selectedProduct.p.bg">
+
+          <div class="hoverlay">{{selectedProduct.p.name}}</div>
+
       </div>
     </div>
   
     <div class="content">
+      <div
+        class="heading"
+        [innerHTML]="selectedProduct.p.name"
+        (click)="unselect()">
+      </div>
       <div class="scroll-area">
         <div class="data-row" *ngFor="let data of selectedProduct.p.data">
           <div class="chemical">{{data.chemical}}</div>
