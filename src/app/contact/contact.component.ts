@@ -23,7 +23,7 @@ export class ContactComponent implements OnInit, OnDestroy {
   lng = this.isMobile ? this.marker.lng : 29.511557;
   zoom = 17;
 
-  isLoaded = false;
+  loaded = false;
   ready = false;
 
   informed = false;
@@ -50,7 +50,7 @@ export class ContactComponent implements OnInit, OnDestroy {
   }
 
   get isReady() {
-    return this.isLoaded && this.ready;
+    return this.loaded && this.ready;
   }
 
   get isMobile() {
