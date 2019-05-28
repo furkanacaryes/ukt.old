@@ -59,7 +59,7 @@ export class AppService {
       ['', 'og:title',        meta.title],
       ['', 'og:description',  meta.description],
       ['', 'og:image',        meta.image],
-      ['', 'og:url',          `http://localhost:4200/${meta.route}`],
+      ['', 'og:url',          `https://uktkimya.com/${meta.route}`],
     ];
 
     this._title.setTitle(`UKT Kimya | ${meta.title}`);
