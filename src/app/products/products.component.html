@@ -9,18 +9,26 @@
     class="product"
     [class.filled]="isFilled(p)">
 
+    <ng-container *ngIf="isFilled(p); else elseTemplate">
+
       <div
-        *ngIf="isFilled(p)"
         class="hex"
         (click)="showOff($event, p, slot)"
         [style.backgroundImage]="p.bg">
 
-          <div class="hoverlay">{{p.name}}</div>
+        <div class="hoverlay">{{p.name}}</div>
 
-          <img [src]="p.img" (load)="imageLoaded()">
+        <img [src]="p.img" (load)="imageLoaded()">
 
       </div>
-    </div>
+
+    </ng-container>
+
+    <ng-template #elseTemplate>
+      <div class="hex"></div>
+    </ng-template>
+      
+  </div>
 
 </div>
 
