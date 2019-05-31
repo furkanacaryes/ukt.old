@@ -10,7 +10,7 @@ import {
   group
 } from '@angular/animations';
 
-export default trigger('enter', [
+export const servicesEnterAnimation = trigger('enter', [
   state('void', style({ opacity: 0 })),
   state('false', style({ opacity: 0 })),
   state('true', style({ opacity: 1 })),

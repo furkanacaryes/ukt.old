@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import homeEnterAnimation from '../Animations/home.enter.animation';
+import { homeEnterAnimation } from '../Animations/home.enter.animation';
 
 import { Subscription } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   sub: Subscription;
 
 
-  constructor( private _appService: AppService ) { }
+  constructor(private _appService: AppService) { }
 
   ngOnInit() {
     this._appService.updateMeta({

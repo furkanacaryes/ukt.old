@@ -9,7 +9,7 @@ import {
   stagger
 } from '@angular/animations';
 
-export default trigger('enter', [
+export const homeEnterAnimation = trigger('enter', [
   state('void', style({ opacity: 0 })),
   state('false', style({ opacity: 0 })),
   state('true', style({ opacity: 1 })),

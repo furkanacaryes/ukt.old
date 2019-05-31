@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import aboutEnterAnimation from '../Animations/about.enter.animation';
+import { aboutEnterAnimation } from '../Animations/about.enter.animation';
 
 import { AppService } from '../app.service';
 import { debounceTime } from 'rxjs/operators';
@@ -30,7 +30,7 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   sub: Subscription;
 
-  constructor( private _appService: AppService ) { }
+  constructor(private _appService: AppService) { }
 
   ngOnInit() {
     this._appService.updateMeta({

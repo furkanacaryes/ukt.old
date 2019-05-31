@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import servicesEnterAnimation from '../Animations/services.enter.animation';
-import servicesTransition from '../Animations/services.transition';
+import { servicesEnterAnimation } from '../Animations/services.enter.animation';
+import { servicesTransition } from '../Animations/services.transition';
 
 import { AppService } from '../app.service';
 import { Subscription } from 'rxjs';
@@ -31,7 +31,7 @@ export class ServicesComponent implements OnInit, OnDestroy {
   loadedCount = 0;
   ready = false;
 
-  constructor( private _appService: AppService ) { }
+  constructor(private _appService: AppService) { }
 
   ngOnInit() {
     this.sub = this._appService.ui

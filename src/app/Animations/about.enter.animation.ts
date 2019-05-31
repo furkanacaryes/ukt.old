@@ -9,7 +9,7 @@ import {
 } from '@angular/animations';
 
 // Used by about.component and contact.component
-export default (target) => {
+export const aboutEnterAnimation = (target) => {
   return trigger('enter', [
     state('void', style({ opacity: 0 })),
     state('false', style({ opacity: 0 })),

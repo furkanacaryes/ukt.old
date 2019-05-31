@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import aboutEnterAnimation from '../Animations/about.enter.animation';
+import { aboutEnterAnimation } from '../Animations/about.enter.animation';
 
 import { Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';

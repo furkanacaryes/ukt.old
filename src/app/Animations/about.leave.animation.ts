@@ -6,7 +6,7 @@ import {
   style
 } from '@angular/animations';
 
-export default (target) => group([
+export const aboutLeaveAnimation = (target) => group([
   query(':leave', [
     animate('600ms ease', style({
       opacity: 0

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import byebyeAnimation from './Animations/byebye.animation';
-import somethingCool from './Animations/menu.animation';
+import { byebyeAnimation } from './Animations/byebye.animation';
+import { menuAnimation } from './Animations/menu.animation';
 
 import { AppService } from './app.service';
 
@@ -12,7 +12,7 @@ import { AppService } from './app.service';
   styleUrls: ['./app.component.scss'],
   animations: [
     byebyeAnimation,
-    somethingCool
+    menuAnimation
   ]
 })
 export class AppComponent implements OnInit {
@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   location;
   menuView = false;
 
-  constructor( private _appService: AppService ) {}
+  constructor(private _appService: AppService) { }
 
   ngOnInit() {
     this.setMenuView();

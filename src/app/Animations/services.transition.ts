@@ -8,7 +8,7 @@ import {
   animate
 } from '@angular/animations';
 
-export default trigger('servicesTransition', [
+export const servicesTransition = trigger('servicesTransition', [
   transition('* => *', group([
     query(':enter', [
       style({

@@ -10,7 +10,7 @@ import {
   stagger
 } from '@angular/animations';
 
-export default trigger('somethingCool', [
+export const menuAnimation = trigger('somethingCool', [
   state('false', style({
     transform: '*',
   })),

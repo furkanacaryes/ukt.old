@@ -7,7 +7,7 @@ import {
   group
 } from '@angular/animations';
 
-export default trigger('showOff', [
+export const showOff = trigger('showOff', [
   transition(':enter', group([
     query('.content', [
       style({

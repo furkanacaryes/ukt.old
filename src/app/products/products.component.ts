@@ -1,7 +1,7 @@
 import { Component, OnInit, Renderer2, OnDestroy } from '@angular/core';
 
-import showOff from '../Animations/showOff.animation';
-import productsEnterAnimation from '../Animations/products.enter.animation';
+import { showOff } from '../Animations/showOff.animation';
+import { productsEnterAnimation } from '../Animations/products.enter.animation';
 import { PRODUCTS_STATIC_DATA } from './products.data';
 
 import { AppService } from '../app.service';
@@ -147,7 +147,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
 
   setStyle(elem, prop, val, delay = 0) {
-    setTimeout(_ => this.r2.setStyle(elem, prop,  val), delay);
+    setTimeout(_ => this.r2.setStyle(elem, prop, val), delay);
   }
 
 

@@ -7,7 +7,7 @@ import {
   stagger
 } from '@angular/animations';
 
-export default () => group([
+export const homeLeaveAnimation = () => group([
   query(':leave', [
     animate('600ms ease', style({
       opacity: 0
