@@ -22,7 +22,7 @@ export class ServicesComponent implements OnInit, OnDestroy {
 
   images = [
     '../../assets/acar-carousel/colorcotton.jpg',
-    '../../assets/acar-carousel/fabrics.jpg',
+    '../../assets/acar-carousel/spool.jpg',
     '../../assets/acar-carousel/colors.jpg'
   ];
 

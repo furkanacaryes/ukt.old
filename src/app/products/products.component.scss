@@ -101,6 +101,7 @@
 			justify-content: center;
 			align-items: center;
 			text-align: center;
+			cursor: pointer;
 			background-color: rgba(36, 63, 125, 0.7);
 			transition: opacity 0.3s ease;
 		}
@@ -139,6 +140,7 @@
 			box-shadow 0.6s ease;
 
 		.hex .hoverlay {
+			cursor: unset;
 			animation: showOff 400ms ease 200ms normal forwards;
 		}
 

@@ -39,7 +39,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this._appService.updateMeta({
       title: 'Ürünler',
-      description: 'Tekstil Kimyasalları',
+      description: 'Üretim süreci boyunca ürünlerimiz başrolde.',
       image: this._products[0].img,
       route: 'urunler'
     });

@@ -5,6 +5,8 @@ import homeEnterAnimation from '../Animations/home.enter.animation';
 import { Subscription } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
 
+import { slides } from './home.data';
+
 import { AppService } from '../app.service';
 
 @Component({
@@ -15,43 +17,7 @@ import { AppService } from '../app.service';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  slides: Slide[] = [
-    {
-      heading: 'Fabrics',
-      desc: 'Lorem ipsum dolor sit amet...',
-      img: '../assets/acar-carousel/fabrics.jpg',
-      button: 'İncele',
-      routerLink: '/servisler'
-    },
-    {
-      heading: 'Auxiliaries',
-      desc: 'Lorem ipsum dolor sit amet...',
-      img: '../assets/acar-carousel/auxiliaries.jpg',
-      button: 'İncele',
-      routerLink: '/iletisim'
-    },
-    {
-      heading: 'Color Cotton',
-      desc: 'Lorem ipsum dolor sit amet...',
-      img: '../assets/acar-carousel/colorcotton.jpg',
-      button: 'İncele',
-      routerLink: '/iletisim'
-    },
-    {
-      heading: 'Color Chemistry',
-      desc: 'Lorem ipsum dolor sit amet...',
-      img: '../assets/acar-carousel/colors.jpg',
-      button: 'İncele',
-      routerLink: '/iletisim'
-    },
-    {
-      heading: '5th Item',
-      desc: 'Lorem ipsum dolor sit amet...',
-      img: '../assets/acar-carousel/colorcotton.jpg',
-      button: 'İncele',
-      routerLink: '/iletisim'
-    }
-  ];
+  slides: Slide[] = slides;
 
   loadedCount = 0;
   ready = false;
@@ -64,7 +30,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this._appService.updateMeta({
       title: 'Anasayfa',
-      description: 'Tekstil Kimyasalları',
+      description: 'UKT TEKSTİL VE KİMYASALLARI SAN. TİC. LTD. ŞTİ.',
       image: this.slides[0].img,
       route: ''
     });

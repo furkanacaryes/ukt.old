@@ -35,7 +35,7 @@ export class ContactComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this._appService.updateMeta({
       title: 'İletişim',
-      description: 'Bize Ulaşın',
+      description: 'Etkileşim, ulaşılabilirlik ile başlar.',
       image: '',
       route: 'iletisim'
     });

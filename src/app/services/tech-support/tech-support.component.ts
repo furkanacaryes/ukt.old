@@ -14,11 +14,7 @@ export class TechSupportComponent implements OnInit {
   ngOnInit() {
     this._appService.updateMeta({
       title: 'Teknik Destek',
-      description: `
-        Müşterilerimizin ürün seçimi ve kullanımı sırasında,
-        karşılaşabilecekleri sorunlarla ilgili olarak,
-        ihtiyaç duyulan hizmet desteğini vermekteyiz.
-      `,
+      description: 'Ürün seçimi ve kullanımı sırasında desteğimiz sizinle.',
       image: '',
       route: 'servisler/teknik-destek'
     });

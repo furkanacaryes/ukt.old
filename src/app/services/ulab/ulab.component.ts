@@ -14,10 +14,7 @@ export class ULabComponent implements OnInit {
   ngOnInit() {
     this._appService.updateMeta({
       title: 'Uygulama Laboratuvarı',
-      description: `
-      Çalışma ortamımız içinde mevcut ürünleri için yeni uygulama sahaları geliştirme,
-      yeni geliştirilen ürünlerin performansını test etmek ve müşterilerimizin sorunlarına interaktif çözümler bulmaktır.
-      `,
+      description: 'Müşterilerimizin istekleri ve sorunlarından yola çıkarak servis hizmetleri veriyoruz.',
       image: '',
       route: 'servisler/uygulama-laboratuvari'
     });
