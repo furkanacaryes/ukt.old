@@ -3,7 +3,6 @@ import { RouterOutlet } from '@angular/router';
 
 import { byebyeAnimation } from './Animations/byebye.animation';
 import { menuAnimation } from './Animations/menu.animation';
-
 import { AppService } from './app.service';
 
 @Component({
@@ -11,8 +10,8 @@ import { AppService } from './app.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [
-    byebyeAnimation,
-    menuAnimation
+    menuAnimation,
+    byebyeAnimation
   ]
 })
 export class AppComponent implements OnInit {

@@ -6,7 +6,7 @@ import { PRODUCTS_STATIC_DATA } from './products.data';
 
 import { AppService } from '../app.service';
 import { Subscription } from 'rxjs';
-import { debounceTime, map } from 'rxjs/operators';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'ukt-products',

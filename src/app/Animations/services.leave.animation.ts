@@ -6,7 +6,7 @@ import {
   style
 } from '@angular/animations';
 
-export const servicesLeaveAnimation = () => group([
+export const servicesLeaveAnimation = group([
   query(':leave', [
     animate('600ms ease', style({
       opacity: 0

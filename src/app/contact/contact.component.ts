@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
   selector: 'ukt-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
-  animations: [aboutEnterAnimation('.info-box')]
+  animations: [aboutEnterAnimation]
 })
 export class ContactComponent implements OnInit, OnDestroy {
 

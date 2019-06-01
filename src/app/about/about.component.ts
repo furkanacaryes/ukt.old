@@ -11,7 +11,7 @@ import { AppService } from '../app.service';
   selector: 'ukt-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
-  animations: [aboutEnterAnimation('.about-layout')]
+  animations: [aboutEnterAnimation]
 })
 export class AboutComponent implements OnInit, OnDestroy {
 
@@ -20,7 +20,7 @@ export class AboutComponent implements OnInit, OnDestroy {
   background = '../../assets/about-bg.png';
   sub: Subscription;
 
-  constructor( private _appService: AppService ) { }
+  constructor(private _appService: AppService) { }
 
   ngOnInit() {
     this._appService.updateMeta({

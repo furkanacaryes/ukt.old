@@ -8,7 +8,7 @@ import {
   group
 } from '@angular/animations';
 
-export const productsLeaveAnimation = () => group([
+export const productsLeaveAnimation = group([
   // query(':leave', [
   //   animate('600ms ease', style({
   //     opacity: 0
