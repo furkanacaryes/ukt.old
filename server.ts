@@ -6,7 +6,7 @@ import {ngExpressEngine} from '@nguniversal/express-engine';
 import {provideModuleMap} from '@nguniversal/module-map-ngfactory-loader';
 
 import * as express from 'express';
-// import * as helmet from 'helmet';
+import * as helmet from 'helmet';
 import {join} from 'path';
 
 // Faster server renders w/ Prod mode (dev mode never needed)
@@ -15,7 +15,7 @@ enableProdMode();
 // Express server
 const app = express();
 
-// app.use(helmet());
+app.use(helmet());
 
 const PORT = process.env.PORT || 4002;
 const DIST_FOLDER = join(process.cwd(), 'dist/browser');
