@@ -13,11 +13,11 @@ section {
 	align-items: center;
 	padding: 96px 0 0 0;
 	box-sizing: border-box;
-	background:
-		url('../../assets/about-bg.png')
-		no-repeat
-		center -40px /cover;
 	background-attachment: fixed;
+	background:
+		url('../../assets/about-bg-mobile.webp')
+		no-repeat center
+		-40px /cover;
 
 	&::before {
 		content: '';
@@ -56,4 +56,11 @@ section {
 			}
 		}
 	}
+}
+
+.jp2 :host-context section {
+	background:
+		url('../../assets/about-bg-mobile.jpg')
+		no-repeat center
+		-40px /cover;
 }

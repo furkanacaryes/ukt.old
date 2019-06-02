@@ -1,70 +1,45 @@
 
-:host {
+@media only screen and (min-width : 768px) {
 
-	/* iPhone 5 */ 
-	@media only screen and (min-width : 320px) {}
-	
-	
-	/* iPhone 6/7/8 */
-	@media only screen and (min-width : 375px) {}
-	
-	
-	/* Phones */ 
-	@media only screen and (min-width : 480px) {}
-	
-	
-	/* Custom */
-	@media only screen and (min-width : 600px) {}
-	
-	
-	/* Small Devices, Tablets */
-	@media only screen and (min-width : 768px) {
-
+	:host {
 		min-height: 100vh;
-
+	
 		section {
+			height: 100vh;
 			padding: 80px 0 0 0;
+			background-attachment: unset;
 			background:
-				url('../../assets/about-bg.png')
+				url('../../assets/about-bg.webp')
 				no-repeat
 				-140px 0/cover;
-			background-attachment: unset;
-			height: 100vh;
-
+	
 			&::before {
 				background-image:
 					linear-gradient(to top, rgba(36, 63, 125, 0.7), transparent),
 					linear-gradient(to left, #fff 15%, transparent 80%),
 					linear-gradient(to right, #fff 0%, transparent 30%);
 			}
-
+	
 			.about-layout {
 				width: 50%;
 				left: 50%;
 				margin: 0;
-
+	
 				.heading {
 					font-size: 40px;
 				}
-
+	
 				.content {
 					padding: 32px 0;
 				}
 			}
 		}
-	
-		
 	}
-	
-	
-	/* Medium Devices, Desktops */
-	@media only screen and (min-width : 992px) {}
-	
-	
-	/* Large Devices, Wide Screens */
-	@media only screen and (min-width : 1200px) {}
-	
-	
-	@media only screen and (min-width : 1366px) {}
-	
+
+	.jp2 :host-context section  {
+		background:
+			url('../../assets/about-bg.jp2')
+			no-repeat
+			-140px 0/cover;
+	}
 }

@@ -19,4 +19,9 @@
   </div>
 </section>
 
-<img [src]="background" (load)="isLoaded = true">
+<picture>
+  <source [srcset]="background + '.webp'" type="image/webp" media="(min-width: 768px)">
+  <source [srcset]="background + '.jp2'"  type="image/jp2"  media="(min-width: 768px)">
+  <source [srcset]="background + '-mobile.webp'" type="image/webp">
+  <img [src]="background + '-mobile.jpg'" (load)="isLoaded = true">
+</picture>

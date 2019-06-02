@@ -17,7 +17,7 @@ export class AboutComponent implements OnInit, OnDestroy {
 
   isLoaded = false;
   ready = false;
-  background = '../../assets/about-bg.png';
+  background = '../../assets/about-bg';
   sub: Subscription;
 
   constructor(private _appService: AppService) { }
