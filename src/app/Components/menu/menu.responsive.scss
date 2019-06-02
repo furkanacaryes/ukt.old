@@ -48,7 +48,8 @@
 	
 }
 
-:host-context(#root .menuView) {
+#root .menuView :host-context,
+#root :host-context(.menuView) {
 
 	.menu-item-slot {
 		display: flex;
