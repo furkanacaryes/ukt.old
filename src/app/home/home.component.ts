@@ -60,6 +60,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.loadedCount += 1;
   }
 
+  selectOptimal(image) {
+    return `url(${image}.jpg)`;
+  }
+
 }
 
 interface Slide {

@@ -31,14 +31,21 @@
 
         <div
           class="image"
-          [style.backgroundImage]="'url('+slide.img+')'">
+          [style.backgroundImage]="selectOptimal(slide.img)">
+
         </div>
       </div>
+
+      <!-- <picture>
+        <source media="(min-width: 768px)" srcset="slide.img + '.webp'" type="image/webp">
+        <source media="(min-width: 768px)" srcset="slide.img + '.jpg'"  type="image/jpg">
+        <source [srcset]="slide.img + '-mobile-1x.webp'"    type="image/webp">
+        <source [srcset]="slide.img + '-mobile-2x.webp 2x'" type="image/webp">
+        <source [srcset]="slide.img + '-mobile-1x.jpg'"     type="image/jpg">
+        <source [srcset]="slide.img + '-mobile-2x.jpg 2x'"  type="image/jpg">
+        <img [src]="slide.img" (load)="imageLoaded()">
+      </picture> -->
 
     </ng-template>
   
 </acar-ui-carousel>
-
-<ng-container *ngFor="let s of slides">
-  <img [src]="s.img" (load)="imageLoaded()">
-</ng-container>
