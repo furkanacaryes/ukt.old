@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.slides = this.slides.map(s => {
       return {
         ...s,
-        optimal: this.selectOptimal(s.img)
+        optimal: this._appService.selectOptimal(s.img)
       };
     });
   }
@@ -55,14 +55,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     return this._appService.isMobile;
   }
 
-  get isRetina() {
-    return this._appService.isRetina;
-  }
-
-  get isWebpSupported() {
-    return this._appService.isWebpSupported;
-  }
-
   get isLoaded() {
     return this.loadedCount === this.slides.length;
   }
@@ -73,15 +65,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   imageLoaded() {
     this.loadedCount += 1;
-  }
-
-  selectOptimal(image) {
-
-    if (this.isMobile) {
-      image += this.isRetina ? '-mobile-2x' : '-mobile-1x';
-    }
-
-    return this.isWebpSupported ? `${image}.webp` : `${image}.jpg`;
   }
 
 }

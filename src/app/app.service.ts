@@ -57,6 +57,15 @@ export class AppService {
     return isPlatformBrowser(this.platformId);
   }
 
+  public selectOptimal(image) {
+
+    if (this.isMobile) {
+      image += this.isRetina ? '-mobile-2x' : '-mobile-1x';
+    }
+
+    return this.isWebpSupported ? `${image}.webp` : `${image}.jpg`;
+  }
+
   public updateMeta(meta: MetaData) {
 
     const tags = [
