@@ -41,6 +41,18 @@ export class AppService {
     return this.isBrowser ? window.innerWidth < 768 : false;
   }
 
+  public get isWebpSupported() {
+    if (this.isBrowser) {
+      return document.documentElement.classList.contains('acar-webp');
+    }
+  }
+
+  public get isRetina() {
+    if (this.isBrowser) {
+      return window.devicePixelRatio >= 2;
+    }
+  }
+
   public get isBrowser() {
     return isPlatformBrowser(this.platformId);
   }

@@ -31,8 +31,8 @@
 
         <div
           class="image"
-          [style.backgroundImage]="selectOptimal(slide.img)">
-
+          [style.backgroundImage]="'url(' + slide.optimal + ')'">
+            <img [src]="slide.optimal">
         </div>
       </div>
 

@@ -38,6 +38,13 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.sub = this._appService.ui
       .pipe(debounceTime(100))
       .subscribe(state => this.ready = !state.isBusy);
+
+    this.slides = this.slides.map(s => {
+      return {
+        ...s,
+        optimal: this.selectOptimal(s.img)
+      };
+    });
   }
 
   ngOnDestroy() {
@@ -46,6 +53,14 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   get isMobile() {
     return this._appService.isMobile;
+  }
+
+  get isRetina() {
+    return this._appService.isRetina;
+  }
+
+  get isWebpSupported() {
+    return this._appService.isWebpSupported;
   }
 
   get isLoaded() {
@@ -61,7 +76,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   selectOptimal(image) {
-    return `url(${image}.jpg)`;
+
+    if (this.isMobile) {
+      image += this.isRetina ? '-mobile-2x' : '-mobile-1x';
+    }
+
+    return this.isWebpSupported ? `${image}.webp` : `${image}.jpg`;
   }
 
 }

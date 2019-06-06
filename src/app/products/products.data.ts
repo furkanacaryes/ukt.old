@@ -8,7 +8,7 @@ interface Product {
 export const PRODUCTS_STATIC_DATA: Product[] = [
   {
     name: 'Enzimler',
-    img: '../assets/product-images/optimized/on-islem.png',
+    img: '../assets/product-images/optimized/on-islem',
     data: [
       { chemical: 'PEROZYM HPK',  desc: 'Konsantre antiperoksit enzimi' },
       { chemical: 'TORAPOLISH W', desc: 'Tüy dökücü enzim' },
@@ -18,7 +18,7 @@ export const PRODUCTS_STATIC_DATA: Product[] = [
   },
   {
     name: 'Islatıcılar',
-    img: '../assets/product-images/optimized/on-islem2.png',
+    img: '../assets/product-images/optimized/on-islem2',
     data: [
       { chemical: 'TORAWET CNR CONC', desc: 'Merserize işlemler için konsantre ıslatıcı (Anyonik)' },
       { chemical: 'TORAWET MASTER', desc: 'Konsantre pad-batch seri boya ıslatıcısı (Anyonik)' },
@@ -30,7 +30,7 @@ export const PRODUCTS_STATIC_DATA: Product[] = [
   },
   {
     name: 'İyon Tutucular',
-    img: '../assets/product-images/optimized/on-islem.png',
+    img: '../assets/product-images/optimized/on-islem',
     data: [
       { chemical: 'IYONEX FE CONC', desc: 'Fosfanat bazlı konsantre iyon tutucu' },
       { chemical: 'STABILOX M', desc: 'Peroksit stabilizatörü' },
@@ -41,7 +41,7 @@ export const PRODUCTS_STATIC_DATA: Product[] = [
   },
   {
     name: 'Yumuşatıcılar',
-    img: '../assets/product-images/optimized/on-islem.png',
+    img: '../assets/product-images/optimized/on-islem',
     data: [
       { chemical: 'TORASOFT ISM', desc: 'Esterquat bazlı yumuşatıcı' },
       { chemical: 'TORASOFT KEK', desc: 'Katyonik yumuşatıcı' },
@@ -55,7 +55,7 @@ export const PRODUCTS_STATIC_DATA: Product[] = [
   },
   {
     name: 'Yıkama Yardımcıları',
-    img: '../assets/product-images/optimized/yikama-yardimci.png',
+    img: '../assets/product-images/optimized/yikama-yardimci',
     data: [
       { chemical: 'TORAWASH 1500', desc: 'Reaktif boya ve baskı sonrası konsantre yıkama sabunu' },
       { chemical: 'TORAWASH STAR', desc: 'Pes/Co-Cv karışımlarının boya sonrası ekolojik yıkama malzemesi' },
@@ -69,7 +69,7 @@ export const PRODUCTS_STATIC_DATA: Product[] = [
   },
   {
     name: 'Dispergatörler',
-    img: '../assets/product-images/optimized/boya-yardimci2.png',
+    img: '../assets/product-images/optimized/boya-yardimci2',
     data: [
       { chemical: 'DEGAPERS MİKRO', desc: 'Üniversal polyester boya egalizatörü ve dispergatörü' },
       { chemical: 'DEGAPERS DFT', desc: 'PES boya egalizatörü ve dispergatörü' },
@@ -83,7 +83,7 @@ export const PRODUCTS_STATIC_DATA: Product[] = [
   },
   {
     name: 'Fiksatörler',
-    img: '../assets/product-images/optimized/boya-yardimci2.png',
+    img: '../assets/product-images/optimized/boya-yardimci2',
     data: [
       { chemical: 'TORAFIX ALF', desc: 'Formaldehitsiz reaktif ve direkt boya fiksatörü' },
       { chemical: 'TORAFIX PA', desc: 'Poliamid fiksatörü' }
@@ -91,7 +91,7 @@ export const PRODUCTS_STATIC_DATA: Product[] = [
   },
   {
     name: 'Boya Yardımcılar',
-    img: '../assets/product-images/optimized/boya-yardimci.png',
+    img: '../assets/product-images/optimized/boya-yardimci',
     data: [
       { chemical: 'TORADYE GOLD', desc: 'Pamuk boyamalarda kullanılan proses hızlandırıcı ürün' },
       { chemical: 'TORATEX K', desc: 'İnceltme banyoları için kostik aktivatörü' },
@@ -100,7 +100,7 @@ export const PRODUCTS_STATIC_DATA: Product[] = [
   },
   {
     name: 'Dispers Baskı',
-    img: '../assets/product-images/optimized/dispers-baski.png',
+    img: '../assets/product-images/optimized/dispers-baski',
     data: [
       { chemical: 'TORAPRINT TMR', desc: 'Doğal dispers baskı kıvamlaştırıcısı' },
       { chemical: 'TORAPRINT BTN CONC', desc: 'Battaniye-polar tipi kalın kumaşlarda kullanılan dispers baskı kıvamlaştırıcı' },
@@ -110,7 +110,7 @@ export const PRODUCTS_STATIC_DATA: Product[] = [
   },
   {
     name: 'Asit Baz Ürünler',
-    img: '../assets/product-images/optimized/boya-yardimci2.png',
+    img: '../assets/product-images/optimized/boya-yardimci2',
     data: [
       { chemical: 'ASITEX S CLASS', desc: 'Uçucu olmayan tampon asit' },
       { chemical: 'ALKATEX PBA', desc: 'Pad-batch boyamalarda kostik silikat yerine kullanılan sıvı alkali' },
@@ -120,7 +120,7 @@ export const PRODUCTS_STATIC_DATA: Product[] = [
   },
   {
     name: 'Kombine Ürünler',
-    img: '../assets/product-images/optimized/on-islem.png',
+    img: '../assets/product-images/optimized/on-islem',
     data: [
       { chemical: 'COMBITEX NEW CONC', desc: 'Konsantre kombin kasar malzemesi' },
       { chemical: 'COMBITEX STRONG', desc: 'Polyester haşıl sökme ve ön yıkama malzemesi' },
@@ -134,7 +134,7 @@ export const PRODUCTS_STATIC_DATA: Product[] = [
 
 // {
 //   name: '',
-//   img: '../assets/acar-carousel/colorcotton.png',
+//   img: '../assets/acar-carousel/colorcotton',
 //   data: [
 
 //   ]
