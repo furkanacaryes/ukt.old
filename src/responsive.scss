@@ -45,11 +45,11 @@
 	
 		// Services
 		.acar-no-webp .head:before {
-			background-image: url('../../assets/acar-carousel/colorcotton.jpg');
+			background-image: url('./assets/acar-carousel/colorcotton.jpg');
 		}
 		
 		.acar-webp .head:before {
-			background-image: url('../../assets/acar-carousel/colorcotton.webp');
+			background-image: url('./assets/acar-carousel/colorcotton.webp');
 		}
 
 		.head {
@@ -114,30 +114,48 @@
 @media only screen and (min-width : 768px) {
 
 	.acar-no-webp {
-		ukt-kklab .image {
-			background-image: url('../../assets/acar-carousel/spool-mobile-2x.jpg');
-		}
+		
+		#root {
 
-		ukt-tech-support .image {
-			background-image: url('../../assets/acar-carousel/colorcotton-mobile-2x.jpg');
-		}
+			ukt-services .head:before {
+				background-image: url('./assets/acar-carousel/colorcotton.jpg');
+			}
 
-		ukt-ulab .image {
-			background-image: url('../../assets/acar-carousel/colors-mobile-2x.jpg');
+			ukt-kklab .image {
+				background-image: url('./assets/acar-carousel/spool-mobile-2x.jpg');
+			}
+	
+			ukt-tech-support .image {
+				background-image: url('./assets/acar-carousel/colorcotton-mobile-2x.jpg');
+			}
+	
+			ukt-ulab .image {
+				background-image: url('./assets/acar-carousel/colors-mobile-2x.jpg');
+			}
+
 		}
 	}
 
 	.acar-webp {
-		ukt-kklab .head:before {
-			background-image: url('../../assets/acar-carousel/spool-mobile-2x.webp');
-		}
 
-		ukt-tech-support .image {
-			background-image: url('../../assets/acar-carousel/colorcotton-mobile-2x.webp');
-		}
+		#root {
 
-		ukt-ulab .image {
-			background-image: url('../../assets/acar-carousel/colors-mobile-2x.webp');
+			ukt-services .head:before {
+				background-image: url('./assets/acar-carousel/colorcotton.webp');
+			}
+
+			ukt-kklab .image {
+				background-image: url('./assets/acar-carousel/spool-mobile-2x.webp');
+			}
+	
+			ukt-tech-support .image {
+				background-image: url('./assets/acar-carousel/colorcotton-mobile-2x.webp');
+			}
+	
+			ukt-ulab .image {
+				background-image: url('./assets/acar-carousel/colors-mobile-2x.webp');
+			}
+
 		}
 	}
 }
