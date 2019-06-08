@@ -18,7 +18,14 @@ import { debounceTime } from 'rxjs/operators';
 })
 export class ProductsComponent implements OnInit, OnDestroy {
 
-  _products = PRODUCTS_STATIC_DATA;
+  _products = PRODUCTS_STATIC_DATA
+    .map(p => {
+      return {
+        ...p,
+        img: this._appService.selectOptimal(p.img, true, true)
+      };
+    });
+
   products = [];
   selectedProduct;
 
