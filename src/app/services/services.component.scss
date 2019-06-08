@@ -12,6 +12,14 @@ section {
 	font-family: ubuntu;
 }
 
+.acar-no-webp :host-context .head:before {
+	background-image: url('../../assets/acar-carousel/colorcotton-mobile-2x.jpg');
+}
+
+.acar-webp :host-context .head:before {
+	background-image: url('../../assets/acar-carousel/colorcotton-mobile-2x.webp');
+}
+
 .head {
 	position: relative;
 	z-index: 0;
@@ -27,10 +35,9 @@ section {
 		z-index: -1;
 		width: 100%;
 		height: 100%;
-		background:
-			url('../../assets/acar-carousel/colorcotton.jpg')
-			no-repeat
-			center/cover;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
 	}
 
 	&::after {

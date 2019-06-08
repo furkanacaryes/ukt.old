@@ -4,8 +4,27 @@
 }
 
 .image {
-	background:
-		url('../../../assets/acar-carousel/spool.jpg')
-		no-repeat
-		center/cover;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.acar-no-webp :host-context .image {
+	background-image: url('../../assets/acar-carousel/spool-mobile-1x.jpg');
+}
+
+.acar-webp :host-context .head:before {
+	background-image: url('../../assets/acar-carousel/spool-mobile-1x.webp');
+}
+
+@media (min-resolution: 2dppx),
+(-webkit-min-device-pixel-ratio: 2)
+{
+	.acar-no-webp :host-context .image {
+		background-image: url('../../assets/acar-carousel/spool-mobile-2x.jpg');
+	}
+	
+	.acar-webp :host-context .image {
+		background-image: url('../../assets/acar-carousel/spool-mobile-2x.webp');
+	}
 }

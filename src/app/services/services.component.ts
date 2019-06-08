@@ -20,16 +20,19 @@ export class ServicesComponent implements OnInit, OnDestroy {
 
   services = this._appService.services;
 
-  images = [
-    '../../assets/acar-carousel/colorcotton.jpg',
-    '../../assets/acar-carousel/spool.jpg',
-    '../../assets/acar-carousel/colors.jpg'
-  ];
-
   sub: Subscription;
 
   loadedCount = 0;
   ready = false;
+
+  images = [
+    '../../assets/acar-carousel/spool',
+    '../../assets/acar-carousel/colors',
+    '../../assets/acar-carousel/colorcotton'
+  ]
+  .map(i => this._appService.selectOptimal(i, true, true))
+  .concat(this._appService.selectOptimal('../../assets/acar-carousel/colorcotton', true));
+
 
   constructor(private _appService: AppService) { }
 

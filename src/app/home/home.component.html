@@ -32,19 +32,9 @@
         <div
           class="image"
           [style.backgroundImage]="'url(' + slide.optimal + ')'">
-            <img [src]="slide.optimal">
+            <img [src]="slide.optimal" (load)="imageLoaded()">
         </div>
       </div>
-
-      <!-- <picture>
-        <source media="(min-width: 768px)" srcset="slide.img + '.webp'" type="image/webp">
-        <source media="(min-width: 768px)" srcset="slide.img + '.jpg'"  type="image/jpg">
-        <source [srcset]="slide.img + '-mobile-1x.webp'"    type="image/webp">
-        <source [srcset]="slide.img + '-mobile-2x.webp 2x'" type="image/webp">
-        <source [srcset]="slide.img + '-mobile-1x.jpg'"     type="image/jpg">
-        <source [srcset]="slide.img + '-mobile-2x.jpg 2x'"  type="image/jpg">
-        <img [src]="slide.img" (load)="imageLoaded()">
-      </picture> -->
 
     </ng-template>
   

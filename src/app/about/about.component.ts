@@ -17,8 +17,12 @@ export class AboutComponent implements OnInit, OnDestroy {
 
   isLoaded = false;
   ready = false;
-  background = '../../assets/about-bg';
+
   sub: Subscription;
+
+  background = this._appService
+    .selectOptimal('../../assets/about-bg', false);
+
 
   constructor(private _appService: AppService) { }
 
@@ -33,8 +37,6 @@ export class AboutComponent implements OnInit, OnDestroy {
     this.sub = this._appService.ui
       .pipe(debounceTime(100))
       .subscribe(state => this.ready = !state.isBusy);
-
-    this.background = this._appService.selectOptimal(this.background);
   }
 
   ngOnDestroy() {

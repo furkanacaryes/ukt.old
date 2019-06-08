@@ -57,10 +57,12 @@ export class AppService {
     return isPlatformBrowser(this.platformId);
   }
 
-  public selectOptimal(image) {
+  public selectOptimal(image, hdpiExist = true, small = false) {
 
     if (this.isMobile) {
-      image += this.isRetina ? '-mobile-2x' : '-mobile-1x';
+      image += hdpiExist && this.isRetina ? '-mobile-2x' : '-mobile-1x';
+    } else if (small) {
+      image += '-mobile-2x';
     }
 
     return this.isWebpSupported ? `${image}.webp` : `${image}.jpg`;

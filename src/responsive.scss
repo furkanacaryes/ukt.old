@@ -1,21 +1,5 @@
 
-#root {
-
-	/* iPhone 5 */ 
-	@media only screen and (min-width : 320px) {}
-	
-	
-	/* iPhone 6/7/8 */
-	@media only screen and (min-width : 375px) {}
-	
-	
-	/* Phones */ 
-	@media only screen and (min-width : 480px) {}
-	
-	
-	/* Custom */
-	@media only screen and (min-width : 600px) {}
-	
+#root {	
 	
 	/* Small Devices, Tablets */
 	@media only screen and (min-width : 768px) {
@@ -31,8 +15,6 @@
 			.slide-item {
 				perspective-origin: right bottom;
 	
-				&.deepPrev {}
-	
 				&.prev {
 					transition: opacity 0s ease 1s;
 	
@@ -43,8 +25,6 @@
 					}
 				}
 	
-				&.current {}
-	
 				&.next {
 					transition: opacity 0s ease 1s;
 	
@@ -54,8 +34,7 @@
 							translate3d(100%, -100%, 400px);
 					}
 				}
-	
-				&.deepNext {}
+
 			}
 	
 			.slider__buttons {
@@ -65,6 +44,14 @@
 	
 	
 		// Services
+		.acar-no-webp .head:before {
+			background-image: url('../../assets/acar-carousel/colorcotton.jpg');
+		}
+		
+		.acar-webp .head:before {
+			background-image: url('../../assets/acar-carousel/colorcotton.webp');
+		}
+
 		.head {
 			height: 400px;
 		
@@ -120,12 +107,37 @@
 			width: 960px;
 		}
 	}
-	
-	
-	/* Large Devices, Wide Screens */
-	@media only screen and (min-width : 1200px) {}
-	
-	
-	@media only screen and (min-width : 1366px) {}
 
+}
+
+// Responsive Images
+@media only screen and (min-width : 768px) {
+
+	.acar-no-webp {
+		ukt-kklab .image {
+			background-image: url('../../assets/acar-carousel/spool-mobile-2x.jpg');
+		}
+
+		ukt-tech-support .image {
+			background-image: url('../../assets/acar-carousel/colorcotton-mobile-2x.jpg');
+		}
+
+		ukt-ulab .image {
+			background-image: url('../../assets/acar-carousel/colors-mobile-2x.jpg');
+		}
+	}
+
+	.acar-webp {
+		ukt-kklab .head:before {
+			background-image: url('../../assets/acar-carousel/spool-mobile-2x.webp');
+		}
+
+		ukt-tech-support .image {
+			background-image: url('../../assets/acar-carousel/colorcotton-mobile-2x.webp');
+		}
+
+		ukt-ulab .image {
+			background-image: url('../../assets/acar-carousel/colors-mobile-2x.webp');
+		}
+	}
 }

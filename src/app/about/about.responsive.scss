@@ -8,10 +8,7 @@
 			height: 100vh;
 			padding: 80px 0 0 0;
 			background-attachment: unset;
-			background:
-				url('../../assets/about-bg.webp')
-				no-repeat
-				-140px 0/cover;
+			background-position: -140px 0;
 	
 			&::before {
 				background-image:
@@ -36,10 +33,11 @@
 		}
 	}
 
-	.jp2 :host-context section  {
-		background:
-			url('../../assets/about-bg.jp2')
-			no-repeat
-			-140px 0/cover;
+	.acar-webp :host-context section {
+		background-image: url('../../assets/about-bg.webp');
+	}
+	
+	.acar-no-webp :host-context section {
+		background-image: url('../../assets/about-bg.jpg');
 	}
 }

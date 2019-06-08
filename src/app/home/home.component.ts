@@ -17,7 +17,12 @@ import { AppService } from '../app.service';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  slides: Slide[] = slides;
+  slides: Slide[] = slides.map(s => {
+    return {
+      ...s,
+      optimal: this._appService.selectOptimal(s.img)
+    };
+  });
 
   loadedCount = 0;
   ready = false;
@@ -38,13 +43,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.sub = this._appService.ui
       .pipe(debounceTime(100))
       .subscribe(state => this.ready = !state.isBusy);
-
-    this.slides = this.slides.map(s => {
-      return {
-        ...s,
-        optimal: this._appService.selectOptimal(s.img)
-      };
-    });
   }
 
   ngOnDestroy() {

@@ -14,10 +14,9 @@ section {
 	padding: 96px 0 0 0;
 	box-sizing: border-box;
 	background-attachment: fixed;
-	background:
-		url('../../assets/about-bg-mobile.webp')
-		no-repeat center
-		-40px /cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center -40px;
 
 	&::before {
 		content: '';
@@ -58,9 +57,10 @@ section {
 	}
 }
 
-.jp2 :host-context section {
-	background:
-		url('../../assets/about-bg-mobile.jpg')
-		no-repeat center
-		-40px /cover;
+.acar-webp :host-context section {
+	background-image: url('../../assets/about-bg-mobile-1x.webp');
+}
+
+.acar-no-webp :host-context section {
+	background-image: url('../../assets/about-bg-mobile-1x.jpg');
 }
