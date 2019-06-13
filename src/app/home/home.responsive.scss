@@ -29,6 +29,10 @@
 			.content__inner {
 				max-width: calc(50% - 10vw - 64px);
 				align-items: unset;
+
+				.description {
+					padding: 32px 0 48px;
+				}
 			}
 		}
 

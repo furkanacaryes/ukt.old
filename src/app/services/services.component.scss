@@ -13,11 +13,23 @@ section {
 }
 
 .acar-no-webp :host-context .head:before {
-	background-image: url('../../assets/acar-carousel/colorcotton-mobile-2x.jpg');
+	background-image: url('../../assets/acar-carousel/colorcotton-mobile-1x.jpg');
 }
 
 .acar-webp :host-context .head:before {
-	background-image: url('../../assets/acar-carousel/colorcotton-mobile-2x.webp');
+	background-image: url('../../assets/acar-carousel/colorcotton-mobile-1x.webp');
+}
+
+@media (min-resolution: 2dppx),
+(-webkit-min-device-pixel-ratio: 2)
+{
+	.acar-no-webp :host-context .head:before {
+		background-image: url('../../assets/acar-carousel/colorcotton-mobile-2x.jpg');
+	}
+	
+	.acar-webp :host-context .head:before {
+		background-image: url('../../assets/acar-carousel/colorcotton-mobile-2x.webp');
+	}
 }
 
 .head {
