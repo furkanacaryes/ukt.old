@@ -51,4 +51,22 @@
 		
 	}
 
+	@media only screen and (min-width : 1600px) {
+		
+		.info-box {
+			width: 440px;
+			height: 500px;
+
+			&::before {
+				width: 120% !important;
+				height: 110% !important;
+				background-image: radial-gradient(270px, #000 40%, transparent) !important;
+			}
+			
+			.hard-centered {
+				font-size: 20px;
+			}
+		}
+	}
+
 }

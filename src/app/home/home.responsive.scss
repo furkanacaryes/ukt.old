@@ -38,4 +38,69 @@
 
 	}
 
+
+	@media only screen and (min-width : 1600px) {
+
+		.backdrop {
+			background-repeat: no-repeat;
+			background-size: cover;
+
+			&::before {
+				opacity: 0.6;
+			}
+
+			&::after {
+				background-image:
+					linear-gradient(to top, rgba(36, 63, 125, 0.7), transparent),
+					linear-gradient(to left, #fff 15%, transparent 80%),
+					linear-gradient(to right, #fff 0%, transparent 30%);
+			}
+		}
+
+		.foreground {
+
+			.image {
+				left: 40%;
+				width: 50%;
+				height: 70%;
+				border-radius: 32px;
+				background-size: cover;
+			}
+
+			.container {
+
+				.content__inner {
+
+					.heading {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						align-self: flex-start;
+						position: relative;
+						z-index: 0;
+						font-size: 44px;
+						color: #fff;
+
+						.heading__underlay {
+							position: absolute;
+							z-index: -1;
+							display: block;
+							width: max-content;
+							font-size: 72px;
+							opacity: 0.2;
+							filter: blur(4px);
+							transform: translateY(-16px);
+						}
+					}
+
+					.description {
+						font-size: 22px;
+						color: #fff;
+					}
+
+				}
+			}
+		}
+	}
+
 }

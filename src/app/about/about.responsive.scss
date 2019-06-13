@@ -1,7 +1,8 @@
 
-@media only screen and (min-width : 768px) {
+:host {
 
-	:host {
+	@media only screen and (min-width : 768px) {
+
 		min-height: 100vh;
 	
 		section {
@@ -39,5 +40,24 @@
 	
 	.acar-no-webp :host-context section {
 		background-image: url('../../assets/about-bg.jpg');
+	}
+
+	@media only screen and (min-width : 1600px) {
+
+		section {
+
+			.about-layout {
+				padding: 64px;
+	
+				.heading {
+					font-size: 44px;
+				}
+	
+				.content {
+					font-size: 20px;
+				}
+			}
+		}
+
 	}
 }

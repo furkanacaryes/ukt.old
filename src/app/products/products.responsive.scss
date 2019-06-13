@@ -119,13 +119,50 @@
 		.product:nth-child(14n + 8) {
 			margin-left: 70px !important;
 		}
+	}	
+	
+	@media only screen and (min-width : 1600px) {
+
+		.container:first-of-type {
+			width: 1190px !important;
+			padding: 128px 0 0 0 !important;
+		}
+
+		.product {
+			width: 145px;
+			height: 156px;
+
+			.hex .hoverlay {
+				font-size: 18px;
+				padding: 16px;
+				box-sizing: border-box;
+			}
+
+		}
+
+		.slot-area .slot {
+			width: 435px;
+			height: 468px;
+		}
+
+		.detail-layer .content {
+
+			.heading {
+				font-size: 22px;
+
+				&::before {
+					width: 32px;
+					height: 32px;
+				}
+			}
+
+			.scroll-area {
+
+				.data-row {
+					font-size: 18px;
+				}
+			}
+		}
 	}
-	
-	
-	/* Large Devices, Wide Screens */
-	@media only screen and (min-width : 1200px) {}
-	
-	
-	@media only screen and (min-width : 1366px) {}
 	
 }

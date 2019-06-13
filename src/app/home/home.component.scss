@@ -68,6 +68,10 @@
 		.heading {
 			font-size: 40px;
 			font-weight: bold;
+
+			.heading__underlay {
+				display: none;
+			}
 		}
 
 		.description {
