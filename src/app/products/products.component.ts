@@ -1,8 +1,10 @@
 import { Component, OnInit, Renderer2, OnDestroy } from '@angular/core';
 
-import { showOff } from '../Animations/showOff.animation';
+// import { showOff } from '../Animations/showOff.animation';
 import { productsEnterAnimation } from '../Animations/products.enter.animation';
-import { PRODUCTS_STATIC_DATA } from './products.data';
+
+// import { PRODUCTS_STATIC_DATA } from './products.data';
+import { PRODUCTS_STATIC_DATA } from './products.revised.data';
 
 import { AppService } from '../app.service';
 import { Subscription } from 'rxjs';
@@ -13,7 +15,8 @@ import { debounceTime } from 'rxjs/operators';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss'],
   animations: [
-    showOff, productsEnterAnimation
+    productsEnterAnimation,
+    // showOff
   ]
 })
 export class ProductsComponent implements OnInit, OnDestroy {
@@ -34,7 +37,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
   ready = false;
   styles;
   top;
-  listener = ['scroll', _ => document.scrollingElement.scrollTop = this.top];
+  // listener = ['scroll', _ => document.scrollingElement.scrollTop = this.top];
 
 
   constructor(
@@ -118,53 +121,53 @@ export class ProductsComponent implements OnInit, OnDestroy {
   }
 
 
-  showOff(event: { target }, product, slot) {
+  // showOff(event: { target }, product, slot) {
 
-    if (this._appService.isBrowser) {
-      this.top = document.scrollingElement.scrollTop;
-      // @ts-ignore
-      window.addEventListener(...this.listener);
-    }
+  //   if (this._appService.isBrowser) {
+  //     this.top = document.scrollingElement.scrollTop;
+  //     // @ts-ignore
+  //     window.addEventListener(...this.listener);
+  //   }
 
-    this.selectedProduct = event.target.closest('.product');
-    this.selectedProduct.p = product;
-    this.r2.addClass(this.selectedProduct, 'selected');
+  //   this.selectedProduct = event.target.closest('.product');
+  //   this.selectedProduct.p = product;
+  //   this.r2.addClass(this.selectedProduct, 'selected');
 
-    const { top, left } = event.target.getBoundingClientRect();
-    const { top: y, left: x } = slot.getBoundingClientRect();
+  //   const { top, left } = event.target.getBoundingClientRect();
+  //   const { top: y, left: x } = slot.getBoundingClientRect();
 
-    this.styles = {
-      top: `${top - 1.5}px`,
-      left: `${left - 1.3}px`,
-      opacity: 1,
-      transform: `
-        translate3d(${x - left}px, ${y - top}px, 0)
-        scale(${this.isMobile ? 2 : 3})`
-    };
-  }
-
-
-  showStart(clone) {
-    for (const prop in this.styles) {
-      if (this.styles.hasOwnProperty(prop)) {
-        this.setStyle(clone, prop, this.styles[prop]);
-      }
-    }
-  }
+  //   this.styles = {
+  //     top: `${top - 1.5}px`,
+  //     left: `${left - 1.3}px`,
+  //     opacity: 1,
+  //     transform: `
+  //       translate3d(${x - left}px, ${y - top}px, 0)
+  //       scale(${this.isMobile ? 2 : 3})`
+  //   };
+  // }
 
 
-  setStyle(elem, prop, val, delay = 0) {
-    setTimeout(_ => this.r2.setStyle(elem, prop, val), delay);
-  }
+  // showStart(clone) {
+  //   for (const prop in this.styles) {
+  //     if (this.styles.hasOwnProperty(prop)) {
+  //       this.setStyle(clone, prop, this.styles[prop]);
+  //     }
+  //   }
+  // }
 
 
-  unselect() {
-    if (this._appService.isBrowser) {
-      // @ts-ignore
-      setTimeout(() => window.removeEventListener(...this.listener), 600);
-    }
-    this.r2.removeClass(this.selectedProduct, 'selected');
-    this.selectedProduct = null;
-  }
+  // setStyle(elem, prop, val, delay = 0) {
+  //   setTimeout(_ => this.r2.setStyle(elem, prop, val), delay);
+  // }
+
+
+  // unselect() {
+  //   if (this._appService.isBrowser) {
+  //     // @ts-ignore
+  //     setTimeout(() => window.removeEventListener(...this.listener), 600);
+  //   }
+  //   this.r2.removeClass(this.selectedProduct, 'selected');
+  //   this.selectedProduct = null;
+  // }
 
 }

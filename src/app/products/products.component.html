@@ -11,9 +11,10 @@
 
     <ng-container *ngIf="isFilled(p); else elseTemplate">
 
+      <!-- REVISED | Discarded -->
+      <!-- (click)="showOff($event, p, slot)" -->
       <div
         class="hex"
-        (click)="showOff($event, p, slot)"
         [style.backgroundImage]="p.bg">
 
         <div class="hoverlay">{{p.name}}</div>
@@ -32,7 +33,7 @@
 
 </div>
 
-<div
+<!-- <div
   *ngIf="selectedProduct"
   class="detail-layer"
   [@showOff]="!!selectedProduct"
@@ -72,4 +73,4 @@
 
 <div class="slot-area">
   <div class="slot" #slot></div>
-</div>
+</div> -->
