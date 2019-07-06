@@ -47,6 +47,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
 
   ngOnInit() {
+    console.log(this._products.length);
     this._appService.updateMeta({
       title: 'Ürünler',
       description: 'Üretim süreci boyunca ürünlerimiz başrolde.',
@@ -92,7 +93,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
       .map(p => Object.assign(p, { bg: `url('${p.img}')` }))
       .forEach(p => this.place(p));
 
-    for (let i = 0; i <= 20; i++) {
+    for (let i = 0; i <= this._products.length - 1; i++) {
       if (!this.products[i]) {
         this.products[i] = 'empty';
       }
@@ -101,7 +102,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
 
   place(p) {
-    const i = this.randomize(20);
+    const i = this.randomize(this._products.length - 1);
 
     if (this.products.hasOwnProperty(i)) {
       this.place(p);
