@@ -16,6 +16,11 @@
 		section {
 			align-items: center;
 
+			.go {
+				top: unset;
+				bottom: 16px;
+			}
+
 			.info-box-layout {
 				top: unset;
 				display: unset;
@@ -28,6 +33,7 @@
 					flex: unset;
 					transform: unset;
 					font-size: 16px;
+					min-width: 360px;
 
 					.heading {
 						display: none;

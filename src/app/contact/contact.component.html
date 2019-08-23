@@ -7,10 +7,16 @@
     [zoom]="zoom"
     (mapReady)="loaded = true">
   
-    <agm-marker
-      [latitude]="marker.lat"
-      [longitude]="marker.lng">
-    </agm-marker>
+      <agm-marker
+        [latitude]="marker.lat"
+        [longitude]="marker.lng">
+      </agm-marker>
+
+      <agm-direction
+        [origin]="origin"
+        [destination]="marker"
+        [visible]="navigationView">
+    </agm-direction>
   </agm-map>
 
   <div class="container">
@@ -38,8 +44,16 @@
               <div>(0224) 719 27 48</div>
             </div>
           </div>
-  
+
           <div class="contact-item">
+            <div class="contact-item__icon mail"></div>
+            <div class="contact-item__content">
+              <div>emin@uktkimya.com</div>
+              <div>mehtap@uktkimya.com</div>
+            </div>
+          </div>
+  
+          <div class="contact-item" (click)="requestNavigation()">
             <div class="contact-item__icon location"></div>
             <div class="contact-item__content">
               Sinanbey Mahallesi,<br/>
@@ -53,6 +67,10 @@
 
 
       </div>
+    </div>
+
+    <div class="go" (click)="requestNavigation()">
+      <div class="icon"></div>
     </div>
   </div>
 

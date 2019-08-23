@@ -13,11 +13,13 @@ import { Subscription } from 'rxjs';
   animations: [aboutEnterAnimation]
 })
 export class ContactComponent implements OnInit, OnDestroy {
-
   marker = {
     lat: 40.095699,
     lng: 29.513072
   };
+
+  origin;
+  navigationView = false;
 
   lat = this.marker.lat;
   lng = this.isMobile ? this.marker.lng : 29.511557;
@@ -30,7 +32,7 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   sub: Subscription;
 
-  constructor(private _appService: AppService) { }
+  constructor(private _appService: AppService) {}
 
   ngOnInit() {
     this._appService.updateMeta({
@@ -42,11 +44,33 @@ export class ContactComponent implements OnInit, OnDestroy {
 
     this.sub = this._appService.ui
       .pipe(debounceTime(100))
-      .subscribe(state => this.ready = !state.isBusy);
+      .subscribe(state => (this.ready = !state.isBusy));
   }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
+  }
+
+  requestNavigation() {
+    if (this._appService.isBrowser) {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          pos => {
+            this.origin = {
+              lat: pos.coords.latitude,
+              lng: pos.coords.longitude
+            };
+
+            this.navigationView = true;
+          },
+          err => {
+            console.log('Falled into error: ', err.message);
+            this.requestNavigation();
+          },
+          { maximumAge: 60000, timeout: 5000, enableHighAccuracy: true }
+        );
+      }
+    }
   }
 
   get isReady() {
@@ -64,5 +88,4 @@ export class ContactComponent implements OnInit, OnDestroy {
   toggleInfo() {
     this.informed = !this.informed;
   }
-
 }

@@ -7,6 +7,7 @@ import { ContactComponent } from './contact.component';
 import { environment } from '../../environments/environment';
 
 import { AgmCoreModule } from '@agm/core';
+import { AgmDirectionModule } from 'agm-direction';
 
 import { SharedModule } from '../shared.module';
 
@@ -21,6 +22,7 @@ const routes: Route[] = [
     AgmCoreModule.forRoot({
       apiKey: environment.MAPS_API_KEY
     }),
+    AgmDirectionModule,
     RouterModule.forChild(routes),
     SharedModule,
   ]

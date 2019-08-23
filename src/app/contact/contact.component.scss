@@ -9,6 +9,40 @@
 	overflow: hidden;
 }
 
+// Last Patch
+.go {
+	position: fixed;
+	top: 96px;
+	right: 16px;
+	display: flex;
+	align-items: center;
+	padding: 8px;
+	box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+	background-color: rgba(35, 63, 125, 0.8);
+	border-radius: 64px;
+	font-family: ubuntu;
+	font-weight: bold;
+	color: #fff;
+	cursor: pointer;
+	transition: transform 0.2s ease;
+
+	&:hover {
+		transform: translateY(-8px);
+	}
+
+	&::before {
+		content: 'Navigasyon';
+		margin: 0 8px;
+	}
+
+	.icon {
+		width: 32px;
+		height: 32px;
+		mask: url('../../assets/acar-icons/location.svg') no-repeat center/cover;
+		background-color: #fff
+	}
+}
+
 section {
 	display: flex;
 	width: 100%;
@@ -36,7 +70,8 @@ section {
 	
 	.info-box-layout {
 		position: relative;
-		top: calc(100vh - 140px);
+		// top: calc(100vh - 140px);
+		top: calc(100vh - 150px);
 		display: flex;
 		justify-content: center;
 		transition: all 0.6s ease;
@@ -110,8 +145,10 @@ section {
 
 			.heading {
 				position: absolute;
-				top: 50px;
-				left: 60px;
+				// top: 50px;
+				// left: 60px;
+				top: 65px;
+				left: 75px;
 				width: 100%;
 				transform: rotateZ(30deg);
 				text-align: center;
@@ -169,9 +206,11 @@ section {
 					&.location {
 						mask-image: url('../../assets/acar-icons/location.svg');
 					}
-
 					&.fax {
 						mask-image: url('../../assets/acar-icons/fax.svg');
+					}
+					&.mail {
+						mask-image: url('../../assets/acar-icons/mail.svg');
 					}
 				}
 			}
