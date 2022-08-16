@@ -6,7 +6,7 @@ import { ContactComponent } from './contact.component';
 
 import { environment } from '../../environments/environment';
 
-import { AgmCoreModule } from '@agm/core';
+// import { AgmCoreModule } from '@agm/core';
 
 import { SharedModule } from '../shared.module';
 
@@ -18,9 +18,9 @@ const routes: Route[] = [
   declarations: [ContactComponent],
   imports: [
     CommonModule,
-    AgmCoreModule.forRoot({
-      apiKey: environment.MAPS_API_KEY
-    }),
+    // AgmCoreModule.forRoot({
+    //   apiKey: environment.MAPS_API_KEY
+    // }),
     RouterModule.forChild(routes),
     SharedModule,
   ]

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Route, RouterModule } from '@angular/router';
 
-import { AcarUiModule } from 'acar-ui';
+// import { AcarUiModule } from 'acar-ui';
 import { HomeComponent } from './home.component';
 
 import { SharedModule } from '../shared.module';
@@ -16,7 +16,7 @@ const routes: Route[] = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    AcarUiModule,
+    // AcarUiModule,
     SharedModule
   ]
 })

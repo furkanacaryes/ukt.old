@@ -159,5 +159,8 @@
       }
     }
   },
-  "defaultProject": "ukt"
+  "defaultProject": "ukt",
+  "cli": {
+    "analytics": false
+  }
 }
