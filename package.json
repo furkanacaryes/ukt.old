@@ -7,7 +7,11 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "dev:ssr": "ng run ukt:serve-ssr",
+    "serve:ssr": "node dist/server/main.js",
+    "build:ssr": "ng build && ng run ukt:server",
+    "prerender": "ng run ukt:prerender"
   },
   "private": true,
   "dependencies": {
@@ -33,7 +37,8 @@
     "@angular-devkit/build-angular": "^14.1.2",
     "@angular/cli": "^14.1.2",
     "@angular/compiler-cli": "^14.1.2",
-    "@types/express": "^4.17.13",
+    "@nguniversal/builders": "^14.0.3",
+    "@types/express": "^4.17.0",
     "@types/jasmine": "^4.0.3",
     "@types/node": "^18.7.6",
     "jasmine-core": "^4.3.0",
