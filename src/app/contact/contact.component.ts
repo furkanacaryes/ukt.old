@@ -1,27 +1,32 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from "@angular/core";
 
-import { aboutEnterAnimation } from '../Animations/about.enter.animation';
+import { aboutEnterAnimation } from "../Animations/about.enter.animation";
 
-import { AppService } from '../app.service';
-import { debounceTime } from 'rxjs/operators';
-import { Subscription } from 'rxjs';
+import { AppService } from "../app.service";
+import { debounceTime } from "rxjs/operators";
+import { Subscription } from "rxjs";
+import { MapOptions } from "../Modules/google-maps/google-maps.types";
 
 @Component({
-  selector: 'ukt-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss'],
-  animations: [aboutEnterAnimation]
+  selector: "ukt-contact",
+  templateUrl: "./contact.component.html",
+  styleUrls: ["./contact.component.scss"],
+  animations: [aboutEnterAnimation],
 })
 export class ContactComponent implements OnInit, OnDestroy {
-
-  marker = {
+  markerOptions = {
     lat: 40.095699,
-    lng: 29.513072
+    lng: 29.513072,
   };
 
-  lat = this.marker.lat;
-  lng = this.isMobile ? this.marker.lng : 29.511557;
-  zoom = 17;
+  mapOptions: MapOptions = {
+    center: {
+      lat: this.markerOptions.lat,
+      lng: this.isMobile ? this.markerOptions.lng : 29.511557,
+    },
+    zoom: 17,
+    marker: this.markerOptions
+  };
 
   loaded = false;
   ready = false;
@@ -30,19 +35,19 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   sub: Subscription;
 
-  constructor(private _appService: AppService) { }
+  constructor(private _appService: AppService) {}
 
   ngOnInit() {
     this._appService.updateMeta({
-      title: 'İletişim',
-      description: 'Etkileşim, ulaşılabilirlik ile başlar.',
-      image: '',
-      route: 'iletisim'
+      title: "İletişim",
+      description: "Etkileşim, ulaşılabilirlik ile başlar.",
+      image: "",
+      route: "iletisim",
     });
 
     this.sub = this._appService.ui
       .pipe(debounceTime(100))
-      .subscribe(state => this.ready = !state.isBusy);
+      .subscribe((state) => (this.ready = !state.isBusy));
   }
 
   ngOnDestroy() {
@@ -58,11 +63,10 @@ export class ContactComponent implements OnInit, OnDestroy {
   }
 
   get animateOrWhat() {
-    return this.isMobile ? 'disabled' : this.isReady;
+    return this.isMobile ? "disabled" : this.isReady;
   }
 
   toggleInfo() {
     this.informed = !this.informed;
   }
-
 }

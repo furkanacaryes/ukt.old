@@ -1,29 +1,16 @@
-
 <section [@enter]="animateOrWhat">
+  <map [options]="mapOptions" (onLoad)="loaded = true"></map>
 
-  <!-- <agm-map
-    [latitude]="lat"
-    [longitude]="lng"
-    [zoom]="zoom"
-    (mapReady)="loaded = true">
-
-    <agm-marker
-      [latitude]="marker.lat"
-      [longitude]="marker.lng">
-    </agm-marker>
-  </agm-map> -->
-
-  <div class="container">
+  <!-- <div class="container">
     <div
       class="info-box-layout"
       (click)="toggleInfo()"
-      [class.informed]="informed && isMobile">
+      [class.informed]="informed && isMobile"
+    >
       <div class="info-box">
-
         <div class="heading">İletişim</div>
 
         <div class="hard-centered">
-
           <div class="contact-item">
             <div class="contact-item__icon phone"></div>
             <div class="contact-item__content">
@@ -42,18 +29,14 @@
           <div class="contact-item">
             <div class="contact-item__icon location"></div>
             <div class="contact-item__content">
-              Sinanbey Mahallesi,<br/>
-              Metal İşleri Sanayi Sitesi,<br/>
-              18.Sokak, No: 1,<br/><br/>
-              İnegöl/Bursa<br/>
+              Sinanbey Mahallesi,<br />
+              Metal İşleri Sanayi Sitesi,<br />
+              18.Sokak, No: 1,<br /><br />
+              İnegöl/Bursa<br />
             </div>
           </div>
-
         </div>
-
-
       </div>
     </div>
-  </div>
-
+  </div> -->
 </section>

@@ -1,28 +1,20 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Route, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { Route, RouterModule } from "@angular/router";
 
-import { ContactComponent } from './contact.component';
+import { SharedModule } from "../shared.module";
+import { ContactComponent } from "./contact.component";
+import { GoogleMapsModule } from "../Modules/google-maps/google-maps.module";
 
-import { environment } from '../../environments/environment';
-
-// import { AgmCoreModule } from '@agm/core';
-
-import { SharedModule } from '../shared.module';
-
-const routes: Route[] = [
-  { path: '', component: ContactComponent }
-];
+const routes: Route[] = [{ path: "", component: ContactComponent }];
 
 @NgModule({
   declarations: [ContactComponent],
   imports: [
     CommonModule,
-    // AgmCoreModule.forRoot({
-    //   apiKey: environment.MAPS_API_KEY
-    // }),
+    GoogleMapsModule,
     RouterModule.forChild(routes),
     SharedModule,
-  ]
+  ],
 })
-export class ContactModule { }
+export class ContactModule {}
