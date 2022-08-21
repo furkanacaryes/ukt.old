@@ -1,8 +1,0 @@
-<div *ngIf="apiLoaded | async" class="map-container">
-  <google-map
-    [options]="options"
-    (tilesloaded)="onTilesLoaded($event)"
-    width="500px"
-    height="500px"
-  ></google-map>
-</div>

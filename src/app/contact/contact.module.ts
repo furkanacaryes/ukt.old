@@ -4,7 +4,7 @@ import { Route, RouterModule } from "@angular/router";
 
 import { SharedModule } from "../shared.module";
 import { ContactComponent } from "./contact.component";
-import { GoogleMapsModule } from "../Modules/google-maps/google-maps.module";
+import { GoogleMapsModule } from "@angular/google-maps";
 
 const routes: Route[] = [{ path: "", component: ContactComponent }];
 

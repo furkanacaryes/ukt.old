@@ -1,11 +1,10 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
-
-import { aboutEnterAnimation } from "../Animations/about.enter.animation";
-
-import { AppService } from "../app.service";
+import { Loader } from "@googlemaps/js-api-loader";
 import { debounceTime } from "rxjs/operators";
 import { Subscription } from "rxjs";
-import { MapOptions } from "../Modules/google-maps/google-maps.types";
+
+import { aboutEnterAnimation } from "../Animations/about.enter.animation";
+import { AppService } from "../app.service";
 
 @Component({
   selector: "ukt-contact",
@@ -14,18 +13,28 @@ import { MapOptions } from "../Modules/google-maps/google-maps.types";
   animations: [aboutEnterAnimation],
 })
 export class ContactComponent implements OnInit, OnDestroy {
-  markerOptions = {
-    lat: 40.095699,
-    lng: 29.513072,
+  isMapAPILoaded = false;
+
+  lat = 40.095699;
+  lng = 29.513072;
+
+  coordinates: google.maps.LatLngLiteral = {
+    lat: this.lat,
+    lng: this.lng,
   };
 
-  mapOptions: MapOptions = {
-    center: {
-      lat: this.markerOptions.lat,
-      lng: this.isMobile ? this.markerOptions.lng : 29.511557,
-    },
+  mapOptions: google.maps.MapOptions = {
+    center: this.coordinates,
     zoom: 17,
-    marker: this.markerOptions
+  };
+
+  markerOptions: google.maps.MarkerOptions = {
+    draggable: false,
+  };
+
+  markerPosition: google.maps.LatLngLiteral = {
+    lat: this.lat,
+    lng: this.lng,
   };
 
   loaded = false;
@@ -48,10 +57,24 @@ export class ContactComponent implements OnInit, OnDestroy {
     this.sub = this._appService.ui
       .pipe(debounceTime(100))
       .subscribe((state) => (this.ready = !state.isBusy));
+
+    this.initMap();
   }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
+  }
+
+  initMap() {
+    const loader = new Loader({
+      apiKey: "AIzaSyADpOLu2JOtX6Stmy21CG-p4xj10ki2xLQ",
+      version: "weekly",
+    });
+
+    loader.load().then(() => {
+      console.log("Maps API has been loaded!")
+      this.isMapAPILoaded = true;
+    });
   }
 
   get isReady() {

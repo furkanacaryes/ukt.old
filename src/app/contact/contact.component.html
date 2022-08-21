@@ -1,7 +1,19 @@
 <section [@enter]="animateOrWhat">
-  <map [options]="mapOptions" (onLoad)="loaded = true"></map>
+  <div id="map-container">
+    <google-map
+      *ngIf="isMapAPILoaded"
+      [options]="mapOptions"
+      width="100%"
+      height="100%"
+    >
+      <map-marker
+        [position]="markerPosition"
+        [options]="markerOptions"
+      ></map-marker>
+    </google-map>
+  </div>
 
-  <!-- <div class="container">
+  <div class="container">
     <div
       class="info-box-layout"
       (click)="toggleInfo()"
@@ -38,5 +50,5 @@
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 </section>
